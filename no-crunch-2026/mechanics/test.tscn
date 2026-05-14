@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bhb7363tkvd8m"]
+
+[ext_resource type="PackedScene" uid="uid://bbv1lppvlti15" path="res://mechanics/laser.tscn" id="1_3ifv2"]
+
+[node name="Test" type="Node2D" unique_id=632573369]
+
+[node name="Laser" parent="." unique_id=1796673620 instance=ExtResource("1_3ifv2")]
+position = Vector2(208, 120)
+max_length = 1400.0
+cast_speed = 100.0
+is_casting = false
+angle = 3.0
