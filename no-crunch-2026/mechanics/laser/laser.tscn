@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbv1lppvlti15"]
 
 [ext_resource type="Texture2D" uid="uid://diboyx827a2ce" path="res://icon.svg" id="1_5vwaf"]
-[ext_resource type="Script" uid="uid://deec31oprbisr" path="res://mechanics/laser.gd" id="2_r8im3"]
+[ext_resource type="Script" uid="uid://deec31oprbisr" path="res://mechanics/laser/laser.gd" id="2_r8im3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nj2ki"]
 
@@ -30,10 +30,6 @@ shader = SubResource("Shader_5vwaf")
 [node name="Laser" type="RayCast2D" unique_id=1796673620]
 target_position = Vector2(1, 0)
 script = ExtResource("2_r8im3")
-max_length = null
-cast_speed = null
-is_casting = null
-angle = null
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1090106252]
 scale = Vector2(0.14, 0.14)

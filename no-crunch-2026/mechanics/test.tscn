@@ -1,12 +1,14 @@
-[gd_scene format=3 uid="uid://bhb7363tkvd8m"]
+[gd_scene format=4 uid="uid://bhb7363tkvd8m"]
 
-[ext_resource type="PackedScene" uid="uid://bbv1lppvlti15" path="res://mechanics/laser.tscn" id="1_3ifv2"]
+[ext_resource type="PackedScene" uid="uid://bbv1lppvlti15" path="res://mechanics/laser/laser.tscn" id="1_3ifv2"]
+[ext_resource type="PackedScene" uid="uid://chm0r7htneq3w" path="res://mechanics/obstacles/wall.tscn" id="2_c7pxq"]
 
 [node name="Test" type="Node2D" unique_id=632573369]
 
 [node name="Laser" parent="." unique_id=1796673620 instance=ExtResource("1_3ifv2")]
 position = Vector2(208, 120)
-max_length = 1400.0
-cast_speed = 100.0
-is_casting = false
-angle = 3.0
+cast_speed = 5.0
+angle = 270.0
+
+[node name="Wall" parent="." unique_id=1775110316 instance=ExtResource("2_c7pxq")]
+tile_map_data = PackedByteArray("AAAIAAUAAAAAAAEAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAFAAUAAAADAAEAAAAEAAYAAAABAAAAAAADAAYAAAABAAAAAAACAAYAAAABAAAAAAABAAYAAAAAAAAAAAAFAAYAAAACAAAAAAAFAAQAAAABAAEAAAAFAAEAAAAAAAMAAAAFAAIAAAABAAEAAAAFAAMAAAABAAEAAAA=")
