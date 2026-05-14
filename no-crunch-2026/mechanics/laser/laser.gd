@@ -4,20 +4,19 @@ extends RayCast2D
 # Appearance
 @export var color := Color.WHITE: set = set_color
 @onready var line_2d: Line2D = %Line2D
-@export var max_length := 1400.0
 @export var cast_speed := 100.0
 
 # Intrinsic to laser
 @export var is_casting := false: set = set_is_casting
-@export var angle: float = 0
+@export var angle: float = 0 # in degrees
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_is_casting(true)
 	
-func _physics_process(delta: float) -> void:
-	target_position.x += sin(angle)
-	target_position.y += cos(angle)
+func _physics_process(_delta: float) -> void:
+	target_position.x += sin(angle * PI / 180) * cast_speed
+	target_position.y += cos(angle * PI / 180) * cast_speed
 
 	var laser_end_position := target_position
 	force_raycast_update()

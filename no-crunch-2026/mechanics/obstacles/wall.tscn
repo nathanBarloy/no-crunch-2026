@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://chm0r7htneq3w"]
+
+[ext_resource type="TileSet" uid="uid://becmdcr88qr61" path="res://mechanics/obstacles/temporary_walls.tres" id="1_03cmn"]
+[ext_resource type="Script" uid="uid://bjvf3eked1fxb" path="res://mechanics/obstacles/wall.gd" id="2_8vkx7"]
+
+[node name="Wall" type="TileMapLayer" unique_id=1775110316]
+tile_set = ExtResource("1_03cmn")
+script = ExtResource("2_8vkx7")
