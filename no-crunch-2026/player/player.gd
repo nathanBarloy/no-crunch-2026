@@ -1,36 +1,48 @@
-extends Node2D
+extends CharacterBody2D
 
 @export var speed = 400  # (pixel/s)
+var is_moving_right = false
+var is_moving_left = false
+var is_moving_up = false
+var is_moving_down = false
 
 signal drop_request(node: Node)
 signal take_request()
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	# Process movement
-	var frame_speed = get_frame_speed(delta)
-	self.position += frame_speed
+	var velo = get_velo()
+	velocity = velo
+	move_and_slide()
+	
+	# Update moving flags
+	is_moving_right = velo.x > 0
+	is_moving_left = velo.x < 0
+	is_moving_down = velo.y > 0
+	is_moving_up = velo.y < 0
+	
 	
 	# Process action
 	if Input.is_action_just_pressed("action"):
 		action()
 
 
-func get_frame_speed(delta: float) -> Vector2:
-	var frame_speed = Vector2.ZERO
+func get_velo() -> Vector2:
+	var velo = Vector2.ZERO
 	if Input.is_action_pressed("move-right"):
-		frame_speed.x += 1
+		velo.x += 1
 	if Input.is_action_pressed("move-left"):
-		frame_speed.x -= 1
+		velo.x -= 1
 	if Input.is_action_pressed("move-up"):
-		frame_speed.y -= 1
+		velo.y -= 1
 	if Input.is_action_pressed("move-down"):
-		frame_speed.y += 1
+		velo.y += 1
 	
-	if frame_speed.length() != 0:
-		frame_speed = frame_speed.normalized() * speed * delta
+	if velo.length() != 0:
+		velo = velo.normalized() * speed
 	
-	return frame_speed
+	return velo
 
 
 func can_take() -> bool:
@@ -52,3 +64,7 @@ func action() -> void:
 		take_request.emit()
 	else:
 		drop()
+
+
+func get_size() -> Vector2:
+	return $CollisionShape2D.shape.size

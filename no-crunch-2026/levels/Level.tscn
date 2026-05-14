@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c6qrjkx4mcey5"]
+
+[ext_resource type="Script" uid="uid://b8gwcstxgpnsm" path="res://levels/level.gd" id="1_0ydld"]
+[ext_resource type="PackedScene" uid="uid://dywtox2rgh6on" path="res://player/Player.tscn" id="2_rlxyy"]
+
+[node name="Level" type="Node2D" unique_id=281701423]
+script = ExtResource("1_0ydld")
+
+[node name="TableauList" type="Node" parent="." unique_id=1293856932]
+unique_name_in_owner = true
+
+[node name="Player" parent="." unique_id=1815351562 instance=ExtResource("2_rlxyy")]
+position = Vector2(960, 540)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1764246750]
+anchor_mode = 0
