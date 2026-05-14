@@ -17,3 +17,5 @@ texture = ExtResource("1_ulp21")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1219415557]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_3c3w1")
+
+[node name="Inventory" type="Node" parent="." unique_id=2093138465]
