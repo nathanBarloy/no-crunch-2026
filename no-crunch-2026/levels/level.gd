@@ -18,7 +18,6 @@ func _transition_tableau(direction: String):
 	
 	var camera_cible = $Camera2D.position
 	var player_cible = $Player.position
-	print(player_cible, $Player.get_size().x)
 	if direction == "right":
 		if not $Player.is_moving_right:
 			return
@@ -43,7 +42,7 @@ func _transition_tableau(direction: String):
 	camera_on_transition = true
 	# Bloque le joueur pendant la transition
 	$Player.set_physics_process(false)
-	print(player_cible)
+
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property($Camera2D, "position", camera_cible, 0.5)\
 		 .set_trans(Tween.TRANS_SINE)\
