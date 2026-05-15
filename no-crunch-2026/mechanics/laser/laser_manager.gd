@@ -10,6 +10,7 @@ func _ready() -> void:
 	await get_tree().physics_frame
 	instantiate_laser($Geode.position, geode_angle)
 	
+	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("turn-clock"):
 		_rotate(+PI/8)
