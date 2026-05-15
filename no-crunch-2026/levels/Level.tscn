@@ -14,3 +14,9 @@ position = Vector2(960, 540)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1764246750]
 anchor_mode = 0
+
+[node name="VictoryTimer" type="Timer" parent="." unique_id=83908445]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="VictoryTimer" to="." method="_on_victory_timer_timeout"]

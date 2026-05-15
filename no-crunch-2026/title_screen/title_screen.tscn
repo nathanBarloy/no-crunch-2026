@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://wg4052wy5y37"]
+
+[ext_resource type="Script" uid="uid://b6io3xmhqxgat" path="res://title_screen/title_screen.gd" id="1_g2mvh"]
+
+[node name="TitleScreen" type="Node2D" unique_id=276799316]
+script = ExtResource("1_g2mvh")
+
+[node name="Label" type="Label" parent="." unique_id=1308746098]
+offset_right = 1926.0
+offset_bottom = 724.0
+theme_override_font_sizes/font_size = 500
+text = "Press F"
+horizontal_alignment = 1

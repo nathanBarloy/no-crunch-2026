@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="No Crunch 2026"
+run/main_scene="uid://wg4052wy5y37"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 EventBus="*uid://deohwjj5djxcu"
+GameManager="*uid://q17fbfevkaiq"
 
 [display]
 

@@ -12,6 +12,7 @@ func _ready():
 			t.player_exit.connect(_transition_tableau)
 	EventBus.drop_request.connect(_on_player_drop_request)
 	EventBus.take_request.connect(_on_player_take_request)
+	EventBus.victory.connect(_on_victory)
 
 
 func _transition_tableau(direction: String):
@@ -117,3 +118,12 @@ func dezoom():
 	tween.tween_property(camera, "zoom", zoom_target, 0.8)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished
+
+
+func _on_victory():
+	set_physics_process(false)
+	$VictoryTimer.start()
+	dezoom()
+
+func _on_victory_timer_timeout() -> void:
+	GameManager.load_next_level()
