@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqwqk7ttjec67"
-path="res://.godot/imported/cristal___rose___petit___2a.png-c8a9e3e74a5597c8fd2127bbf8888a20.ctex"
+uid="uid://blx7dcjxexop"
+path="res://.godot/imported/MirroirCoté.png-7ca5561a2b4a28905b2922ae688f980d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Asset/cristals/cristal___rose___petit___2a.png"
-dest_files=["res://.godot/imported/cristal___rose___petit___2a.png-c8a9e3e74a5597c8fd2127bbf8888a20.ctex"]
+source_file="res://Art/Asset/Mirroir/MirroirCoté.png"
+dest_files=["res://.godot/imported/MirroirCoté.png-7ca5561a2b4a28905b2922ae688f980d.ctex"]
 
 [params]
 

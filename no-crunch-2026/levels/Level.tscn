@@ -14,6 +14,3 @@ position = Vector2(960, 540)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1764246750]
 anchor_mode = 0
-
-[connection signal="drop_request" from="Player" to="." method="_on_player_drop_request"]
-[connection signal="take_request" from="Player" to="." method="_on_player_take_request"]

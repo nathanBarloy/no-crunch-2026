@@ -10,6 +10,8 @@ func _ready():
 		var t := tableau as Tableau
 		if t:
 			t.player_exit.connect(_transition_tableau)
+	EventBus.drop_request.connect(_on_player_drop_request)
+	EventBus.take_request.connect(_on_player_take_request)
 
 
 func _transition_tableau(direction: String):

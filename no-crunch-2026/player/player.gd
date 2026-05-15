@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @export var speed = 400  # (pixel/s)
@@ -6,9 +7,6 @@ var is_moving_left = false
 var is_moving_up = false
 var is_moving_down = false
 var objects_in_range: Array[Node2D] = []
-
-signal drop_request(node: Node2D)
-signal take_request(node: Node2D)
 
 
 func _physics_process(delta: float) -> void:
@@ -58,13 +56,13 @@ func take(object: Node2D) -> void:
 func drop() -> void:
 	var drop_node = $Inventory.get_child(0)
 	$Inventory.remove_child(drop_node)
-	drop_request.emit(drop_node)
+	EventBus.drop_request.emit(drop_node)
 
 
 func action() -> void:
 	if can_take():
 		if len(objects_in_range) > 0:
-			take_request.emit(objects_in_range[0])
+			EventBus.take_request.emit(objects_in_range[0])
 	else:
 		drop()
 
