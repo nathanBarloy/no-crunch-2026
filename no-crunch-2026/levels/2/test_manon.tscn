@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d1e5q4ha1u7la"]
+
+[ext_resource type="PackedScene" uid="uid://c6qrjkx4mcey5" path="res://levels/Level.tscn" id="1_b1q2b"]
+[ext_resource type="PackedScene" uid="uid://bwkj0rskvm2ye" path="res://levels/2/tableau_test.tscn" id="2_6xqvq"]
+
+[node name="Level" unique_id=281701423 instance=ExtResource("1_b1q2b")]
+
+[node name="Tableau" parent="TableauList" parent_id_path=PackedInt32Array(1293856932) index="0" unique_id=1175971842 instance=ExtResource("2_6xqvq")]

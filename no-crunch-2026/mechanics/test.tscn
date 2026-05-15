@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dg616cv84t3aw" path="res://mechanics/obstacles/mirror.tscn" id="3_pwwon"]
 [ext_resource type="PackedScene" uid="uid://d0j5p2bsjra34" path="res://mechanics/laser/laser_manager.tscn" id="3_wmkox"]
 [ext_resource type="PackedScene" uid="uid://dywtox2rgh6on" path="res://player/Player.tscn" id="4_hnc4v"]
+[ext_resource type="PackedScene" uid="uid://c6qrjkx4mcey5" path="res://levels/Level.tscn" id="5_hnc4v"]
 
 [node name="Test" type="Node2D" unique_id=632573369]
 
@@ -30,3 +31,5 @@ geode_angle = 0.393
 
 [node name="Player" parent="." unique_id=1815351562 instance=ExtResource("4_hnc4v")]
 position = Vector2(290, 663)
+
+[node name="Level" parent="." unique_id=281701423 instance=ExtResource("5_hnc4v")]
