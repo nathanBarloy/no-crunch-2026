@@ -77,3 +77,41 @@ func _on_player_take_request(node: Node2D) -> void:
 	if tableau:
 		tableau.take_object(node)
 		$Player.take(node)
+
+
+func _get_max_dimensions() -> Array[Vector2]:
+	# On suppose que (0,0) est dans les tableaux
+	var max_x = 0
+	var max_y = 0
+	var min_x = 0
+	var min_y = 0
+	for tableau in $TableauList.get_children():
+		var t := tableau as Tableau
+		if t:
+			min_x = min(t.position.x, min_x)
+			min_y = min(t.position.y, min_y)
+			max_x = max(t.position.x+1920, max_x)
+			max_y = max(t.position.y+1080, max_y)
+	return [Vector2(min_x, min_y), Vector2(max_x, max_y)]
+
+
+func dezoom():
+	# Get zoom target values
+	var corners = _get_max_dimensions()
+	var min_corner = corners[0]
+	var max_corner = corners[1]
+	var camera_target = (min_corner+max_corner) / 2
+	var zoom_target = max((max_corner.x - min_corner.x)/1920,
+						(max_corner.y - min_corner.y)/1080)
+	camera_target -= Vector2(1900, 1080) * zoom_target / 2
+	zoom_target = 1/zoom_target
+	zoom_target = Vector2(zoom_target, zoom_target)
+	print(camera_target, zoom_target)
+	
+	# Zoom with tween
+	var tween = create_tween().set_parallel(true)
+	tween.tween_property(camera, "position", camera_target, 0.8)\
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(camera, "zoom", zoom_target, 0.8)\
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	await tween.finished
