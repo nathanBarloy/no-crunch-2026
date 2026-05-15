@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://d0j5p2bsjra34"]
+
+[ext_resource type="Script" uid="uid://bbrkm5t51xo5y" path="res://mechanics/laser/laser_manager.gd" id="1_ym85s"]
+[ext_resource type="Texture2D" uid="uid://diboyx827a2ce" path="res://icon.svg" id="2_68d25"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8qx13"]
+radius = 68.41052
+
+[node name="LaserManager" type="Node2D" unique_id=2147237949]
+script = ExtResource("1_ym85s")
+
+[node name="GeodeSprite" type="Sprite2D" parent="." unique_id=400647370]
+texture = ExtResource("2_68d25")
+
+[node name="Geode" type="Area2D" parent="." unique_id=341586492]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geode" unique_id=1121747643]
+shape = SubResource("CircleShape2D_8qx13")
+
+[node name="Button" type="Button" parent="." unique_id=830325370]
+offset_left = -59.0
+offset_top = -57.0
+offset_right = 59.0
+offset_bottom = 55.0
+
+[connection signal="area_entered" from="Geode" to="." method="_on_geode_area_entered"]
+[connection signal="body_entered" from="Geode" to="." method="_on_geode_body_entered"]
+[connection signal="body_shape_entered" from="Geode" to="." method="_on_geode_body_shape_entered"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
