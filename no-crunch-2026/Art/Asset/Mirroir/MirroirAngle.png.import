@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqwqk7ttjec67"
-path="res://.godot/imported/cristal___rose___petit___2a.png-c8a9e3e74a5597c8fd2127bbf8888a20.ctex"
+uid="uid://c74p8eckxu7ld"
+path="res://.godot/imported/MirroirAngle.png-495cd9e22efa312625c228ea118b6e6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Asset/cristals/cristal___rose___petit___2a.png"
-dest_files=["res://.godot/imported/cristal___rose___petit___2a.png-c8a9e3e74a5597c8fd2127bbf8888a20.ctex"]
+source_file="res://Art/Asset/Mirroir/MirroirAngle.png"
+dest_files=["res://.godot/imported/MirroirAngle.png-495cd9e22efa312625c228ea118b6e6e.ctex"]
 
 [params]
 

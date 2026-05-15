@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmkuscxpy3rlq"
-path="res://.godot/imported/cristal___rose___petit___3a.png-d2ae68cb8e0499e8382f60d6457d3d09.ctex"
+path="res://.godot/imported/cristal___rose___petit___3a.png-a100f18ae79b5f8d9b1299381f166ab7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/cristals/cristal___rose___petit___3a.png"
-dest_files=["res://.godot/imported/cristal___rose___petit___3a.png-d2ae68cb8e0499e8382f60d6457d3d09.ctex"]
+source_file="res://Art/Asset/cristals/cristal___rose___petit___3a.png"
+dest_files=["res://.godot/imported/cristal___rose___petit___3a.png-a100f18ae79b5f8d9b1299381f166ab7.ctex"]
 
 [params]
 
