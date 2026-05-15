@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mi5qh"]
 size = Vector2(38, 123)
 
-[node name="Mirror" type="Area2D" unique_id=565877863]
+[node name="Mirror" type="Area2D" unique_id=565877863 groups=["pickable"]]
 script = ExtResource("1_mi5qh")
 
 [node name="MirrorCollision" type="CollisionShape2D" parent="." unique_id=2021159094 groups=["LaserGroup"]]
