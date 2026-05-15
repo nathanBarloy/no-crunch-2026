@@ -33,6 +33,7 @@ func _physics_process(_delta: float) -> void:
 	if target_position.length() < max_length:
 		target_position.x += cos(angle) * cast_speed
 		target_position.y += sin(angle) * cast_speed
+		
 
 		var laser_end_position := target_position
 		force_raycast_update()
