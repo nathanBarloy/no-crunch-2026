@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://blccoe8ika87v"]
+
+[ext_resource type="PackedScene" uid="uid://cdb3lw8vrea7t" path="res://levels/Tableau.tscn" id="1_2kxh6"]
+
+[node name="Tableau" unique_id=1175971842 instance=ExtResource("1_2kxh6")]

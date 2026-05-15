@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cxkcp1sfflrtd"]
+
+[ext_resource type="PackedScene" uid="uid://cdb3lw8vrea7t" path="res://levels/Tableau.tscn" id="1_26eyh"]
+[ext_resource type="Texture2D" uid="uid://diboyx827a2ce" path="res://icon.svg" id="2_02d2f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hiy2l"]
+size = Vector2(56, 48)
+
+[node name="Tableau" unique_id=1175971842 instance=ExtResource("1_26eyh")]
+
+[node name="Area2D" type="Area2D" parent="." index="6" unique_id=1098367445]
+position = Vector2(1300, 800)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=1741231227]
+shape = SubResource("RectangleShape2D_hiy2l")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" index="1" unique_id=429920761]
+scale = Vector2(0.4375, 0.375)
+texture = ExtResource("2_02d2f")

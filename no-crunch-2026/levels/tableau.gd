@@ -17,3 +17,11 @@ func _ready():
 	$UpBorder.body_entered.connect(func(body):
 		if body.is_in_group("player"):
 			player_exit.emit("up"))
+
+
+func drop_object(node: Node2D, position: Vector2) -> void:
+	add_child(node)
+	node.position = position
+
+func take_object(node: Node2D) -> void:
+	remove_child(node)

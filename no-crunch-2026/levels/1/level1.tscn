@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://dwn4rfcy8ip0p"]
 
 [ext_resource type="PackedScene" uid="uid://c6qrjkx4mcey5" path="res://levels/Level.tscn" id="1_e3wmj"]
-[ext_resource type="PackedScene" uid="uid://cdb3lw8vrea7t" path="res://levels/Tableau.tscn" id="2_inrta"]
+[ext_resource type="PackedScene" uid="uid://cxkcp1sfflrtd" path="res://levels/1/tableau1.tscn" id="2_inrta"]
+[ext_resource type="PackedScene" uid="uid://blccoe8ika87v" path="res://levels/1/tableau2.tscn" id="3_lkjur"]
 
 [node name="Level" unique_id=281701423 instance=ExtResource("1_e3wmj")]
 
 [node name="Tableau" parent="TableauList" parent_id_path=PackedInt32Array(1293856932) index="0" unique_id=1175971842 instance=ExtResource("2_inrta")]
 
-[node name="Tableau2" parent="TableauList" parent_id_path=PackedInt32Array(1293856932) index="1" unique_id=1662730420 instance=ExtResource("2_inrta")]
+[node name="Tableau2" parent="TableauList" parent_id_path=PackedInt32Array(1293856932) index="1" unique_id=1862680596 instance=ExtResource("3_lkjur")]
 position = Vector2(1920, 0)
 
 [node name="Player" parent="." index="1" unique_id=1815351562]

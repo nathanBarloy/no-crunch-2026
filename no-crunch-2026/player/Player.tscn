@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3c3w1"]
 size = Vector2(106, 107)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnvi2"]
+size = Vector2(126, 126)
+
 [node name="Player" type="CharacterBody2D" unique_id=867170571 groups=["player"]]
 script = ExtResource("1_3c3w1")
 
@@ -16,4 +19,12 @@ shape = SubResource("RectangleShape2D_3c3w1")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=314308868]
 texture = ExtResource("1_ulp21")
 
-[node name="Inventory" type="Node" parent="." unique_id=2093138465]
+[node name="InteractionZone" type="Area2D" parent="." unique_id=1294362543]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=427958532]
+shape = SubResource("RectangleShape2D_wnvi2")
+
+[node name="Inventory" type="Node2D" parent="." unique_id=1534953805]
+
+[connection signal="area_entered" from="InteractionZone" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="InteractionZone" to="." method="_on_area_exited"]
