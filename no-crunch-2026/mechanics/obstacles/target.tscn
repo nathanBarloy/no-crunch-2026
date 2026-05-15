@@ -5,17 +5,18 @@
 [ext_resource type="Texture2D" uid="uid://bk6ce2c5r2oau" path="res://Art/Asset/Cible/Animation/CibleF2.png" id="3_7445w"]
 [ext_resource type="Texture2D" uid="uid://ce5tndk4yagkw" path="res://Art/Asset/Cible/Animation/CibleF3.png" id="4_n77ca"]
 [ext_resource type="Texture2D" uid="uid://og2ieh0k6t5w" path="res://Art/Asset/Cible/Animation/CibleF4.png" id="5_busp0"]
+[ext_resource type="AudioStream" uid="uid://cevoc3cw2fphv" path="res://mechanics/obstacles/cracking_crystal.wav" id="6_n77ca"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqvy8"]
 animations = [{
 "frames": [{
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("2_cskpx")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("3_7445w")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("4_n77ca")
 }, {
 "duration": 2.0,
@@ -23,7 +24,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_7445w"]
@@ -39,3 +40,6 @@ sprite_frames = SubResource("SpriteFrames_nqvy8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=318871817]
 position = Vector2(-21, -3)
 shape = SubResource("ConvexPolygonShape2D_7445w")
+
+[node name="CrackingCrystal" type="AudioStreamPlayer" parent="." unique_id=1524465414]
+stream = ExtResource("6_n77ca")

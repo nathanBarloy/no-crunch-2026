@@ -10,3 +10,4 @@ func _animate_victory():
 	if not already_won:
 		already_won = true
 		$Sprite2D.play()
+		$CrackingCrystal.play()
