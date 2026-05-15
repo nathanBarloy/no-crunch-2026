@@ -38,7 +38,8 @@ func _on_laser_collision(collided_laser: Laser):
 		var laser_vec = collided_laser.target_position
 		var reflected_angle = laser_vec.bounce(normal).angle()
 		instantiate_laser(to_local(collided_laser.get_collision_point()), reflected_angle)
-		
+	elif collided_object is Target:
+		EventBus.victory.emit()
 
 
 func _on_geode_area_entered(area: Area2D) -> void:

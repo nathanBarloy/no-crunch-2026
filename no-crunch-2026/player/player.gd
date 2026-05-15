@@ -74,7 +74,9 @@ func get_size() -> Vector2:
 
 
 func _on_area_entered(area: Area2D):
-	objects_in_range.append(area)
+	if area.is_in_group("pickable"):
+		objects_in_range.append(area)
 
 func _on_area_exited(area: Area2D):
-	objects_in_range.erase(area)
+	if area.is_in_group("pickable"):
+		objects_in_range.erase(area)
