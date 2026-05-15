@@ -27,6 +27,10 @@ window/size/mode=3
 [global_group]
 
 player=""
+tableau_border_up=""
+tableau_border_down=""
+tableau_border_left=""
+tableau_border_right=""
 
 [input]
 

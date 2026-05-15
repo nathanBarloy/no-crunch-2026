@@ -7,8 +7,8 @@
 
 [node name="Tableau" unique_id=1175971842 instance=ExtResource("1_6hbeh")]
 
-[node name="Background" parent="." index="0" unique_id=423342782]
-z_index = -1
+[node name="CollisionShape2D" parent="LeftBorder" parent_id_path=PackedInt32Array(1350703398) index="0" unique_id=1301899210]
+one_way_collision = false
 
 [node name="LaserManager" parent="." index="6" unique_id=2147237949 instance=ExtResource("2_w2uyy")]
 position = Vector2(343, 225)

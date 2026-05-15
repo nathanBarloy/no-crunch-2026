@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://bbv1lppvlti15"]
 
-[ext_resource type="Texture2D" uid="uid://diboyx827a2ce" path="res://icon.svg" id="1_5vwaf"]
 [ext_resource type="Script" uid="uid://deec31oprbisr" path="res://mechanics/laser/laser.gd" id="2_r8im3"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_nj2ki"]
 
 [sub_resource type="Shader" id="Shader_5vwaf"]
 code = "shader_type canvas_item;
@@ -28,24 +25,16 @@ shader = SubResource("Shader_5vwaf")
 [sub_resource type="CanvasTexture" id="CanvasTexture_r8im3"]
 
 [node name="Laser" type="RayCast2D" unique_id=1796673620]
-target_position = Vector2(-0.270885, 1330)
+target_position = Vector2(-0.40734726, 2000)
 collide_with_areas = true
 script = ExtResource("2_r8im3")
+color = Color(1, 1, 1, 1)
 is_casting = true
 angle = 1.571
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=1090106252]
-scale = Vector2(0.14, 0.14)
-texture = ExtResource("1_5vwaf")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=858089445]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1754143450]
-shape = SubResource("CircleShape2D_nj2ki")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=467292398]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_nql7q")
 use_parent_material = true
-points = PackedVector2Array(0, 0, -0.270885, 1330)
+points = PackedVector2Array(0, 0, -0.40734726, 2000)
 texture = SubResource("CanvasTexture_r8im3")

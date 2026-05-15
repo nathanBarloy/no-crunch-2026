@@ -3,15 +3,18 @@ class_name Laser
 extends RayCast2D
 
 # Appearance
-@export var color := Color.WHITE: set = set_color
+@export var color :Color = Color("#ed77ff")
 @onready var line_2d: Line2D = %Line2D
+
 var cast_speed: float = 5.0
-var max_length: float = 2000
+var max_length: float = 5000
 
 # Intrinsic to laser
 @export var is_casting := false: set = set_is_casting
 @export var angle: float = 0 # in radians
 var already_collided: bool = false
+
+var come_from: String = ""
 
 signal laser_collision(laser_collided: Laser)
 
@@ -20,7 +23,9 @@ func _ready() -> void:
 	line_2d.points[0] = Vector2.ZERO
 	line_2d.points[1] = Vector2.ZERO
 	target_position = Vector2.ZERO
+	set_color(color)
 	line_2d.visible = true
+	add_exceptions()
 	set_is_casting(true)
 	
 func _physics_process(_delta: float) -> void:
@@ -41,7 +46,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		set_physics_process(false)
 	
-func set_color(new_color: Color) -> void:
+func set_color(new_color: Color = Color("#ed77ff")) -> void:
 	color = new_color
 	if line_2d == null:
 		return
@@ -62,4 +67,19 @@ func set_is_casting(new_value: bool) -> void:
 	else:
 		target_position = Vector2.ZERO
 		line_2d.visible = false
+		
+func add_exceptions():
+	if come_from == "up":
+			for obj in get_tree().get_nodes_in_group("tableau_border_down"):
+				add_exception(obj)
+	if come_from == "down":
+			for obj in get_tree().get_nodes_in_group("tableau_border_up"):
+				add_exception(obj)
+	if come_from == "left":
+			for obj in get_tree().get_nodes_in_group("tableau_border_right"):
+				add_exception(obj)
+	if come_from == "right":
+			for obj in get_tree().get_nodes_in_group("tableau_border_left"):
+				add_exception(obj)
+	
 		
