@@ -6,6 +6,19 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qx13"]
 radius = 68.41052
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ym85s"]
+
+[sub_resource type="Environment" id="Environment_68d25"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.23
+glow_strength = 1.23
+glow_bloom = 0.36
+glow_blend_mode = 0
+glow_hdr_threshold = 2.13
+glow_hdr_scale = 1.93
+glow_hdr_luminance_cap = 73.17
+
 [node name="LaserManager" type="Node2D" unique_id=2147237949]
 script = ExtResource("1_ym85s")
 
@@ -15,8 +28,13 @@ script = ExtResource("1_ym85s")
 shape = SubResource("CircleShape2D_8qx13")
 
 [node name="GeodeSprite" type="Sprite2D" parent="." unique_id=400647370]
-position = Vector2(2.3648634, -0.6250042)
+material = SubResource("CanvasItemMaterial_ym85s")
+position = Vector2(-0.6351373, 0.374996)
+rotation = 0.06804056
 scale = Vector2(0.7438929, 0.7743243)
 texture = ExtResource("2_ym85s")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1193388783]
+environment = SubResource("Environment_68d25")
 
 [connection signal="area_entered" from="Geode" to="." method="_on_geode_area_entered"]
