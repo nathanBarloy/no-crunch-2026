@@ -1,14 +1,32 @@
 [gd_scene format=4 uid="uid://bhb7363tkvd8m"]
 
-[ext_resource type="PackedScene" uid="uid://bbv1lppvlti15" path="res://mechanics/laser/laser.tscn" id="1_3ifv2"]
 [ext_resource type="PackedScene" uid="uid://chm0r7htneq3w" path="res://mechanics/obstacles/wall.tscn" id="2_c7pxq"]
+[ext_resource type="PackedScene" uid="uid://dg616cv84t3aw" path="res://mechanics/obstacles/mirror.tscn" id="3_pwwon"]
+[ext_resource type="PackedScene" uid="uid://d0j5p2bsjra34" path="res://mechanics/laser/laser_manager.tscn" id="3_wmkox"]
+[ext_resource type="PackedScene" uid="uid://dywtox2rgh6on" path="res://player/Player.tscn" id="4_hnc4v"]
 
 [node name="Test" type="Node2D" unique_id=632573369]
 
-[node name="Laser" parent="." unique_id=1796673620 instance=ExtResource("1_3ifv2")]
-position = Vector2(208, 120)
-cast_speed = 5.0
-angle = 270.0
-
 [node name="Wall" parent="." unique_id=1775110316 instance=ExtResource("2_c7pxq")]
 tile_map_data = PackedByteArray("AAAIAAUAAAAAAAEAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAFAAUAAAADAAEAAAAEAAYAAAABAAAAAAADAAYAAAABAAAAAAACAAYAAAABAAAAAAABAAYAAAAAAAAAAAAFAAYAAAACAAAAAAAFAAQAAAABAAEAAAAFAAEAAAAAAAMAAAAFAAIAAAABAAEAAAAFAAMAAAABAAEAAAA=")
+
+[node name="Mirror" parent="." unique_id=752430989 instance=ExtResource("3_pwwon")]
+position = Vector2(605, 427)
+is_tilted = true
+
+[node name="Mirror2" parent="." unique_id=565877863 instance=ExtResource("3_pwwon")]
+position = Vector2(524, 228.00003)
+rotation = 1.559323
+is_tilted = true
+
+[node name="Mirror3" parent="." unique_id=1070699549 instance=ExtResource("3_pwwon")]
+position = Vector2(242, 530)
+rotation = 1.559323
+is_tilted = true
+
+[node name="LaserManager" parent="." unique_id=2147237949 instance=ExtResource("3_wmkox")]
+position = Vector2(246, 286)
+geode_angle = 0.393
+
+[node name="Player" parent="." unique_id=1815351562 instance=ExtResource("4_hnc4v")]
+position = Vector2(290, 663)
