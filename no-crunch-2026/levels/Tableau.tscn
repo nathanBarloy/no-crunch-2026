@@ -23,6 +23,7 @@ b = Vector2(960, 0)
 script = ExtResource("1_ap7dj")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=423342782]
+z_index = -1
 position = Vector2(960, 540)
 scale = Vector2(6.3820586, 6.428571)
 texture = ExtResource("1_u7k6l")

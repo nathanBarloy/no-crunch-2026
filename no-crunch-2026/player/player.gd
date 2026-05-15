@@ -5,9 +5,10 @@ var is_moving_right = false
 var is_moving_left = false
 var is_moving_up = false
 var is_moving_down = false
+var objects_in_range: Array[Node2D] = []
 
-signal drop_request(node: Node)
-signal take_request()
+signal drop_request(node: Node2D)
+signal take_request(node: Node2D)
 
 
 func _physics_process(delta: float) -> void:
@@ -49,22 +50,31 @@ func can_take() -> bool:
 	return $Inventory.get_children().size() == 0
 
 
-func take(object: Node) -> void:
+func take(object: Node2D) -> void:
 	$Inventory.add_child(object)
+	object.position = Vector2.ZERO
 
 
 func drop() -> void:
 	var drop_node = $Inventory.get_child(0)
-	remove_child(drop_node)
+	$Inventory.remove_child(drop_node)
 	drop_request.emit(drop_node)
 
 
 func action() -> void:
 	if can_take():
-		take_request.emit()
+		if len(objects_in_range) > 0:
+			take_request.emit(objects_in_range[0])
 	else:
 		drop()
 
 
 func get_size() -> Vector2:
 	return $CollisionShape2D.shape.size
+
+
+func _on_area_entered(area: Area2D):
+	objects_in_range.append(area)
+
+func _on_area_exited(area: Area2D):
+	objects_in_range.erase(area)
