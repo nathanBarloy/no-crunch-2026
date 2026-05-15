@@ -13,7 +13,7 @@ var max_length: float = 2000
 @export var angle: float = 0 # in radians
 var already_collided: bool = false
 
-signal laser_collision(collided_object: Variant, collided_position: Vector2, collided_normal: Vector2)
+signal laser_collision(laser_collided: Laser)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,7 +34,7 @@ func _physics_process(_delta: float) -> void:
 		if is_colliding() and not already_collided:
 			already_collided = true
 			laser_end_position = to_local(get_collision_point())
-			laser_collision.emit(self, laser_end_position)
+			laser_collision.emit(self)
 			set_physics_process(false)
 
 		line_2d.points[1] = laser_end_position

@@ -1,0 +1,20 @@
+[gd_scene format=4 uid="uid://bwkj0rskvm2ye"]
+
+[ext_resource type="PackedScene" uid="uid://cdb3lw8vrea7t" path="res://levels/Tableau.tscn" id="1_6hbeh"]
+[ext_resource type="PackedScene" uid="uid://d0j5p2bsjra34" path="res://mechanics/laser/laser_manager.tscn" id="2_w2uyy"]
+[ext_resource type="PackedScene" uid="uid://chm0r7htneq3w" path="res://mechanics/obstacles/wall.tscn" id="3_1wtrm"]
+[ext_resource type="PackedScene" uid="uid://dg616cv84t3aw" path="res://mechanics/obstacles/mirror.tscn" id="4_ikr3o"]
+
+[node name="Tableau" unique_id=1175971842 instance=ExtResource("1_6hbeh")]
+
+[node name="Background" parent="." index="0" unique_id=423342782]
+z_index = -1
+
+[node name="LaserManager" parent="." index="6" unique_id=2147237949 instance=ExtResource("2_w2uyy")]
+position = Vector2(343, 225)
+
+[node name="Wall" parent="." index="7" unique_id=1775110316 instance=ExtResource("3_1wtrm")]
+tile_map_data = PackedByteArray("AAAGAAcAAAAAAAIAAAAGAAYAAAABAAEAAAAGAAUAAAACAAIAAAAHAAUAAAABAAAAAAAIAAUAAAABAAAAAAAJAAUAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAACAAAAAAAMAAQAAAACAAIAAAANAAQAAAAAAAEAAAA=")
+
+[node name="Mirror" parent="." index="8" unique_id=565877863 instance=ExtResource("4_ikr3o")]
+position = Vector2(639, 386)

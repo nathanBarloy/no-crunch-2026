@@ -28,7 +28,7 @@ shader = SubResource("Shader_5vwaf")
 [sub_resource type="CanvasTexture" id="CanvasTexture_r8im3"]
 
 [node name="Laser" type="RayCast2D" unique_id=1796673620]
-target_position = Vector2(-0.40734726, 2000)
+target_position = Vector2(-0.270885, 1330)
 collide_with_areas = true
 script = ExtResource("2_r8im3")
 is_casting = true
@@ -47,5 +47,5 @@ shape = SubResource("CircleShape2D_nj2ki")
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_nql7q")
 use_parent_material = true
-points = PackedVector2Array(0, 0, -0.40734726, 2000)
+points = PackedVector2Array(0, 0, -0.270885, 1330)
 texture = SubResource("CanvasTexture_r8im3")

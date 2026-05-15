@@ -24,6 +24,4 @@ offset_right = 59.0
 offset_bottom = 55.0
 
 [connection signal="area_entered" from="Geode" to="." method="_on_geode_area_entered"]
-[connection signal="body_entered" from="Geode" to="." method="_on_geode_body_entered"]
-[connection signal="body_shape_entered" from="Geode" to="." method="_on_geode_body_shape_entered"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
