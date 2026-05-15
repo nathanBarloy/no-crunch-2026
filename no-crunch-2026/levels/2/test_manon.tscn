@@ -5,4 +5,4 @@
 
 [node name="Level" unique_id=281701423 instance=ExtResource("1_b1q2b")]
 
-[node name="Tableau" parent="TableauList" parent_id_path=PackedInt32Array(1293856932) index="0" unique_id=1175971842 instance=ExtResource("2_6xqvq")]
+[node name="Tableau" parent="TableauList" parent_id_path=PackedInt32Array(1112364438) index="0" unique_id=1175971842 instance=ExtResource("2_6xqvq")]

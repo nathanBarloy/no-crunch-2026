@@ -29,28 +29,29 @@ texture = ExtResource("2_ap7dj")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=164749793]
 
-[node name="LeftBorder" type="Area2D" parent="." unique_id=1350703398]
+[node name="LeftBorder" type="Area2D" parent="." unique_id=1350703398 groups=["tableau_border_left"]]
 visible = false
 position = Vector2(0, 540)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBorder" unique_id=1301899210]
 shape = SubResource("SegmentShape2D_ap7dj")
+one_way_collision = true
 
-[node name="RightBorder" type="Area2D" parent="." unique_id=586444953]
+[node name="RightBorder" type="Area2D" parent="." unique_id=586444953 groups=["tableau_border_right"]]
 visible = false
 position = Vector2(1920, 540)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightBorder" unique_id=1851103258]
 shape = SubResource("SegmentShape2D_ky3dn")
 
-[node name="UpBorder" type="Area2D" parent="." unique_id=2114955267]
+[node name="UpBorder" type="Area2D" parent="." unique_id=2114955267 groups=["tableau_border_up"]]
 visible = false
 position = Vector2(960, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpBorder" unique_id=1068953496]
 shape = SubResource("SegmentShape2D_46g36")
 
-[node name="DownBorder" type="Area2D" parent="." unique_id=800467646]
+[node name="DownBorder" type="Area2D" parent="." unique_id=800467646 groups=["tableau_border_down"]]
 visible = false
 position = Vector2(960, 1080)
 
