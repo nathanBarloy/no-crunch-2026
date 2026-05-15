@@ -10,9 +10,10 @@ size = Vector2(106, 107)
 size = Vector2(126, 126)
 
 [node name="Player" type="CharacterBody2D" unique_id=867170571 groups=["player"]]
+collision_layer = 2
 script = ExtResource("1_3c3w1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219415557]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219415557 groups=["player"]]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_3c3w1")
 
@@ -20,8 +21,9 @@ shape = SubResource("RectangleShape2D_3c3w1")
 texture = ExtResource("1_ulp21")
 
 [node name="InteractionZone" type="Area2D" parent="." unique_id=1294362543]
+collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=427958532]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=427958532 groups=["player"]]
 shape = SubResource("RectangleShape2D_wnvi2")
 
 [node name="Inventory" type="Node2D" parent="." unique_id=1534953805]

@@ -6,7 +6,7 @@ extends RayCast2D
 @export var color :Color = Color("#ed77ff")
 @onready var line_2d: Line2D = %Line2D
 
-var cast_speed: float = 5.0
+var cast_speed: float = 15.0
 var max_length: float = 5000
 
 # Intrinsic to laser
@@ -15,6 +15,7 @@ var max_length: float = 5000
 var already_collided: bool = false
 
 var come_from: String = ""
+var laser_index: int = 0
 
 signal laser_collision(laser_collided: Laser)
 
@@ -69,6 +70,9 @@ func set_is_casting(new_value: bool) -> void:
 		line_2d.visible = false
 		
 func add_exceptions():
+	for obj in get_tree().get_nodes_in_group("player"):
+		if obj is CollisionObject2D:
+			add_exception(obj)
 	if come_from == "up":
 			for obj in get_tree().get_nodes_in_group("tableau_border_down"):
 				add_exception(obj)
