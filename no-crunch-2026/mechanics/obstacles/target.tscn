@@ -1,16 +1,41 @@
 [gd_scene format=3 uid="uid://c7waiufd7jnf0"]
 
-[ext_resource type="Texture2D" uid="uid://diboyx827a2ce" path="res://icon.svg" id="1_al6ly"]
 [ext_resource type="Script" uid="uid://c0foxlk7g1wn1" path="res://mechanics/obstacles/target.gd" id="1_cskpx"]
+[ext_resource type="Texture2D" uid="uid://ch5oopcg58m57" path="res://Art/Asset/Cible/CibleNormal.png" id="2_cskpx"]
+[ext_resource type="Texture2D" uid="uid://bk6ce2c5r2oau" path="res://Art/Asset/Cible/Animation/CibleF2.png" id="3_7445w"]
+[ext_resource type="Texture2D" uid="uid://ce5tndk4yagkw" path="res://Art/Asset/Cible/Animation/CibleF3.png" id="4_n77ca"]
+[ext_resource type="Texture2D" uid="uid://og2ieh0k6t5w" path="res://Art/Asset/Cible/Animation/CibleF4.png" id="5_busp0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cskpx"]
-radius = 64.49806
+[sub_resource type="SpriteFrames" id="SpriteFrames_nqvy8"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("2_cskpx")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_7445w")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_n77ca")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_busp0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_7445w"]
+points = PackedVector2Array(-51, 2, -46, 70, 100, 71, 74, -46, 21, -73, -25, -47)
 
 [node name="Target" type="Area2D" unique_id=1004707607]
 script = ExtResource("1_cskpx")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1104975462]
-texture = ExtResource("1_al6ly")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=798969876]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_nqvy8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=318871817]
-shape = SubResource("CircleShape2D_cskpx")
+position = Vector2(-21, -3)
+shape = SubResource("ConvexPolygonShape2D_7445w")
