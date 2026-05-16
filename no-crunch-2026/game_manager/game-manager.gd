@@ -14,9 +14,9 @@ func level_exists(lvl_number: int) -> bool:
 func load_level(lvl_number: int):
 	unload_scene()
 	var scene = load("res://levels/%d/level.tscn" % lvl_number).instantiate()
-	get_tree().root.add_child(scene)
 	current_scene = scene
 	current_level_number = lvl_number
+	get_tree().root.add_child(scene)
 
 func load_next_level():
 	if level_exists(current_level_number+1):
@@ -25,4 +25,8 @@ func load_next_level():
 		load_end_scene()
 
 func load_end_scene():
-	pass
+	unload_scene()
+	var scene = load("res://title_screen/end_screen.tscn").instantiate()
+	current_scene = scene
+	get_tree().root.add_child(scene)
+	
