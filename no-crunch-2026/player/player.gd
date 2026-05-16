@@ -67,12 +67,18 @@ func can_take() -> bool:
 
 
 func take(object: Node2D) -> void:
+	var area := object as Area2D
+	if area:
+		area.collision_layer = 2
 	$Inventory.add_child(object)
 	object.position = Vector2.ZERO
 
 
 func drop() -> void:
 	var drop_node = $Inventory.get_child(0)
+	var area := drop_node as Area2D
+	if area:
+		area.collision_layer = 1
 	$Inventory.remove_child(drop_node)
 	EventBus.drop_request.emit(drop_node)
 

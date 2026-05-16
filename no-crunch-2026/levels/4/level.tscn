@@ -9,3 +9,13 @@
 
 [node name="Player" parent="." index="1" unique_id=1815351562]
 position = Vector2(296, 537)
+
+[node name="Label" type="Label" parent="." index="4" unique_id=631914437]
+offset_left = 493.0
+offset_top = 125.0
+offset_right = 1210.0
+offset_bottom = 173.0
+theme_override_font_sizes/font_size = 40
+text = "Le verre laisse passer la lumière"
+horizontal_alignment = 1
+autowrap_mode = 3

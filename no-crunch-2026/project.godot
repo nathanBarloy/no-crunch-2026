@@ -37,6 +37,10 @@ tableau_border_right=""
 filter=""
 unfilter=""
 
+[gui]
+
+theme/custom="uid://ck0fj32uvy7ej"
+
 [input]
 
 move-right={
