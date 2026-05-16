@@ -1,15 +1,24 @@
 [gd_scene format=3 uid="uid://dywtox2rgh6on"]
 
 [ext_resource type="Script" uid="uid://brc0e1bv68a6b" path="res://player/player.gd" id="1_3c3w1"]
-[ext_resource type="AudioStream" uid="uid://dxuc0t7aao1mx" path="res://player/walking.mp3" id="3_wnvi2"]
 [ext_resource type="Texture2D" uid="uid://c3sw631iypj85" path="res://Art/Animation/taupe_versd_1.png" id="2_mhpjh"]
 [ext_resource type="Texture2D" uid="uid://c8iqy8gjmwj3i" path="res://Art/Animation/taupe_versd_2.png" id="3_ndjxb"]
+[ext_resource type="AudioStream" uid="uid://dxuc0t7aao1mx" path="res://player/walking.mp3" id="3_wnvi2"]
 [ext_resource type="Texture2D" uid="uid://ikkjnptu7ckf" path="res://Art/Animation/taupe_versd_3.png" id="4_5qrx2"]
 [ext_resource type="Texture2D" uid="uid://dbes8chd0k06r" path="res://Art/Animation/taupe_versd_4.png" id="5_b32pr"]
 [ext_resource type="Texture2D" uid="uid://bapj7jdr2ht8n" path="res://Art/Animation/taupe_versd_5.png" id="6_hbkom"]
 [ext_resource type="Texture2D" uid="uid://cp6lpwqtiwtes" path="res://Art/Animation/taupe_versd_6.png" id="7_d4g0h"]
 [ext_resource type="Texture2D" uid="uid://cgpg6o3ib72j7" path="res://Art/Animation/taupe_versd_7.png" id="8_v4f8b"]
 [ext_resource type="Texture2D" uid="uid://cmg4wv3fe1lit" path="res://Art/Animation/taupe_versd_8.png" id="9_t8epa"]
+[ext_resource type="Texture2D" uid="uid://dy1kt5dw2k007" path="res://Art/Animation/2 Animation/TaupeT1.png" id="10_uewl2"]
+[ext_resource type="Texture2D" uid="uid://qkp8qtux0nnn" path="res://Art/Animation/2 Animation/TaupeT2.png" id="11_ofhxi"]
+[ext_resource type="Texture2D" uid="uid://dueay8lrvcyi" path="res://Art/Animation/2 Animation/TaupeT3.png" id="12_yu5hk"]
+[ext_resource type="Texture2D" uid="uid://cevxs6ihwdw6j" path="res://Art/Animation/2 Animation/TaupeT4.png" id="13_q6miu"]
+[ext_resource type="Texture2D" uid="uid://ymecp2ot101n" path="res://Art/Animation/2 Animation/TaupeT5.png" id="14_mlfor"]
+[ext_resource type="Texture2D" uid="uid://bp15wertvhpww" path="res://Art/Animation/2 Animation/TaupeT6.png" id="15_2m0d2"]
+[ext_resource type="Texture2D" uid="uid://bax30enhvn7pt" path="res://Art/Animation/2 Animation/TaupeT7.png" id="16_8nth8"]
+[ext_resource type="Texture2D" uid="uid://bqie2oll0ffk5" path="res://Art/Animation/2 Animation/TaupeT8.png" id="17_8tqfn"]
+[ext_resource type="Texture2D" uid="uid://1b50sodtd5gf" path="res://Art/Animation/2 Animation/hands.png" id="19_ofhxi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3c3w1"]
 size = Vector2(102, 99)
@@ -52,6 +61,35 @@ animations = [{
 "loop": true,
 "name": &"walk",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_uewl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ofhxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yu5hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_q6miu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mlfor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2m0d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8nth8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8tqfn")
+}],
+"loop": true,
+"name": &"walk_with_object",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnvi2"]
@@ -70,7 +108,7 @@ shape = SubResource("RectangleShape2D_3c3w1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1031690092]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_w24id")
-animation = &"idle"
+animation = &"walk_with_object"
 
 [node name="InteractionZone" type="Area2D" parent="." unique_id=1294362543]
 collision_layer = 2
@@ -83,6 +121,12 @@ shape = SubResource("RectangleShape2D_wnvi2")
 
 [node name="Walking" type="AudioStreamPlayer" parent="." unique_id=918864226]
 stream = ExtResource("3_wnvi2")
+
+[node name="Hands" type="Sprite2D" parent="." unique_id=471881546]
+visible = false
+position = Vector2(-4.9999995, 1.9999998)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_ofhxi")
 
 [connection signal="area_entered" from="InteractionZone" to="." method="_on_area_entered"]
 [connection signal="area_exited" from="InteractionZone" to="." method="_on_area_exited"]
