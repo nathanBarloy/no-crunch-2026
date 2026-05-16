@@ -21,6 +21,7 @@ glow_hdr_scale = 2.73
 glow_map_strength = 0.26
 
 [node name="Laser" type="RayCast2D" unique_id=1796673620]
+z_index = 2
 target_position = Vector2(-1.0204021, 5010)
 collide_with_areas = true
 script = ExtResource("2_r8im3")

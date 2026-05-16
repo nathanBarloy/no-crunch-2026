@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d0j5p2bsjra34" path="res://mechanics/laser/laser_manager.tscn" id="2_w2uyy"]
 [ext_resource type="PackedScene" uid="uid://chm0r7htneq3w" path="res://mechanics/obstacles/wall.tscn" id="3_1wtrm"]
 [ext_resource type="PackedScene" uid="uid://c7waiufd7jnf0" path="res://mechanics/obstacles/target.tscn" id="5_s4v2x"]
+[ext_resource type="PackedScene" uid="uid://dg616cv84t3aw" path="res://mechanics/obstacles/mirror.tscn" id="5_xrjqc"]
 
 [node name="Tableau" unique_id=1175971842 instance=ExtResource("1_6hbeh")]
 
@@ -11,7 +12,12 @@
 position = Vector2(343, 225)
 
 [node name="Wall" parent="." index="7" unique_id=1775110316 instance=ExtResource("3_1wtrm")]
-tile_map_data = PackedByteArray("AAAGAAcAAAAAAAIAAAAGAAYAAAABAAEAAAAGAAUAAAACAAIAAAAHAAUAAAABAAAAAAAIAAUAAAABAAAAAAAJAAUAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAACAAAAAAAMAAQAAAACAAIAAAANAAQAAAAAAAEAAAA=")
+scale = Vector2(1.6, 1.6)
+tile_map_data = PackedByteArray("AAAGAAcAAAAAAAIAAAAGAAYAAAABAAEAAAAGAAUAAAACAAIAAAAHAAUAAAABAAAAAAAIAAUAAAABAAAAAAAJAAUAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAACAAAAAAAMAAQAAAACAAIAAAANAAQAAAAAAAEAAAAGAAEAAAAAAAEAAAACAAMAAAAAAAIAAAAEAAQAAAAAAAIAAAAEAAMAAAABAAEAAAAEAAIAAAABAAEAAAAEAAEAAAAAAAMAAAA=")
 
 [node name="Target" parent="." index="8" unique_id=1004707607 instance=ExtResource("5_s4v2x")]
 position = Vector2(539, 697)
+
+[node name="Mirror" parent="." index="9" unique_id=565877863 instance=ExtResource("5_xrjqc")]
+position = Vector2(668, 397)
+rotation = 0.7853982

@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://dg616cv84t3aw"]
 
 [ext_resource type="Script" uid="uid://bkfanu5ak0yju" path="res://mechanics/obstacles/mirror.gd" id="1_mi5qh"]
-[ext_resource type="Texture2D" uid="uid://c860mfiqi7jk7" path="res://Art/Asset/Mirroir/MirroirFace.png" id="2_naucb"]
-[ext_resource type="Texture2D" uid="uid://blx7dcjxexop" path="res://Art/Asset/Mirroir/MirroirCoté.png" id="3_p7jkp"]
+[ext_resource type="Texture2D" uid="uid://dvgekogva5m6j" path="res://Art/Asset/Mirroir/Mirroir.png" id="2_mi5qh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mi5qh"]
-size = Vector2(38, 123)
+size = Vector2(2.9999995, 245)
 
 [node name="Mirror" type="Area2D" unique_id=565877863 groups=["pickable"]]
 script = ExtResource("1_mi5qh")
@@ -14,12 +13,6 @@ script = ExtResource("1_mi5qh")
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_mi5qh")
 
-[node name="Straight" type="Sprite2D" parent="." unique_id=1365596227]
-position = Vector2(0, -1)
-scale = Vector2(1e-05, 1)
-texture = ExtResource("2_naucb")
-
-[node name="Tilted" type="Sprite2D" parent="." unique_id=571338108]
-position = Vector2(11, 19)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_p7jkp")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1266594396]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_mi5qh")
