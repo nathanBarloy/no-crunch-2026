@@ -19,6 +19,10 @@ func _ready():
 	add_child(mole_sound_player)
 	music_player.finished.connect(_on_music_finished)
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("escape"):
+		get_tree().quit()
+
 func _load_song(song_path):
 	music_player_started = true;
 	music_player.stream = load(song_path)
@@ -69,6 +73,11 @@ func load_end_scene():
 	current_scene = scene
 	get_tree().root.add_child(scene)
 	# disconnect the signal
-	music_player.finished.disconnect(_on_music_finished)
+	music_player.stop()
 	_load_song("res://game_manager/Moleom-main-title.ogg")
-	
+
+func load_title_scene():
+	unload_scene()
+	var scene = load("res://title_screen/title_screen.tscn").instantiate()
+	current_scene = scene
+	get_tree().root.add_child(scene)
