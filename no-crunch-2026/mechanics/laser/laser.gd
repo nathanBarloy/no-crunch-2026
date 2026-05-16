@@ -7,7 +7,7 @@ extends RayCast2D
 @onready var line_2d: Line2D = %Line2D
 
 var cast_speed: float = 15.0
-var max_length: float = 5000
+var max_length: float = 10000
 
 # Intrinsic to laser
 @export var is_casting := false: set = set_is_casting
@@ -80,16 +80,16 @@ func add_exceptions():
 			add_exception(obj)
 	
 	if not filtered:
-		if come_from == "up":
-				for obj in get_tree().get_nodes_in_group("tableau_border_down"):
-					add_exception(obj)
-		if come_from == "down":
+		if come_from == "up" or come_from == "down":
+			for obj in get_tree().get_nodes_in_group("tableau_border_down"):
+				add_exception(obj)
+		if come_from == "down" or come_from == "up":
 				for obj in get_tree().get_nodes_in_group("tableau_border_up"):
 					add_exception(obj)
-		if come_from == "left":
+		if come_from == "left" or come_from == "right":
 				for obj in get_tree().get_nodes_in_group("tableau_border_right"):
 					add_exception(obj)
-		if come_from == "right":
+		if come_from == "right" or come_from == "left":
 				for obj in get_tree().get_nodes_in_group("tableau_border_left"):
 					add_exception(obj)
 					
