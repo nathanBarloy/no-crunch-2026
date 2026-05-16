@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ds3a1xxxwfcgc" path="res://levels/tableau.gd" id="1_ap7dj"]
 [ext_resource type="Texture2D" uid="uid://b85ofs4262lxr" path="res://Art/BackGround.png" id="2_ap7dj"]
+[ext_resource type="PackedScene" uid="uid://chm0r7htneq3w" path="res://mechanics/obstacles/wall.tscn" id="3_ky3dn"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ap7dj"]
 a = Vector2(0, -540)
@@ -60,3 +61,5 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DownBorder" unique_id=1745704511]
 shape = SubResource("SegmentShape2D_at630")
+
+[node name="Wall" parent="." unique_id=1775110316 instance=ExtResource("3_ky3dn")]
