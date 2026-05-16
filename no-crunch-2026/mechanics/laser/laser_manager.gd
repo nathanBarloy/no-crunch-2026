@@ -7,6 +7,7 @@ var looping_color: Color = Color("#ed77ff")
 
 var laser_index: int = 0
 
+var nb_intersection: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,10 +18,11 @@ func _ready() -> void:
 	
 	
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("turn-clock"):
-		_rotate(+PI/8)
-	if Input.is_action_just_pressed("turn-anticlock"):
-		_rotate(-PI/8)
+	if nb_intersection > 0:
+		if Input.is_action_just_pressed("turn-clock"):
+			_rotate(+PI/8)
+		if Input.is_action_just_pressed("turn-anticlock"):
+			_rotate(-PI/8)
 	
 func instantiate_laser(init_position: Vector2, laser_angle: float, index: int = 0, come_from: String = "") -> Laser:
 	var new_laser: Laser = laser.instantiate()
@@ -88,3 +90,11 @@ func _on_laser_collision(collided_laser: Laser):
 		instantiate_laser(right_position, collided_laser.angle, laser_index, "right")
 
 	
+
+
+func _on_geode_area_entered(area: Area2D) -> void:
+	nb_intersection += 1
+
+
+func _on_geode_area_exited(area: Area2D) -> void:
+	nb_intersection -= 1
