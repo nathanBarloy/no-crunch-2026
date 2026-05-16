@@ -58,16 +58,31 @@ func _transition_tableau(direction: String):
 	$Player.set_physics_process(true)
 	camera_on_transition = false
 
-
-func _get_current_tableau() -> Tableau:
+func _get_tableau_from_position(pos: Vector2) -> Tableau:
 	for tableau in $TableauList.get_children():
 		var t := tableau as Tableau
 		if t:
-			var relativ_pos = $Player.position - t.position
+			var relativ_pos = pos - t.position
 			if (0 <= relativ_pos.x and relativ_pos.x < 1920) and (0 <= relativ_pos.y and relativ_pos.y < 1080):
 				return t
 	return
 
+func _get_current_tableau() -> Tableau:
+	return _get_tableau_from_position($Player.position)
+
+func _get_neighbour_tableau(direction: String) -> Tableau:
+	var target_pos = $Player.position
+	if direction == "right":
+		target_pos.x += 1920
+	elif direction == "left":
+		target_pos.x -= 1920
+	elif direction == "down":
+		target_pos.y -= 1080
+	elif direction == "up":
+		target_pos.y += 1080
+	else:
+		return
+	return _get_tableau_from_position(target_pos)
 
 func _on_player_drop_request(node: Node2D) -> void:
 	var tableau = _get_current_tableau()

@@ -4,9 +4,9 @@ var current_scene: Node = null
 var current_level_number: int = 0
 
 var song_paths: Array[String] = [
-	"res://game_manager/Moleom main title.wav",
-	"res://game_manager/moleom ambiant song 1.wav",
-	"res://game_manager/moleom ambiant track 2.wav",
+	"res://game_manager/Moleom-main-title.ogg",
+	"res://game_manager/moleom-ambiant-song-1.ogg",
+	"res://game_manager/moleom-ambiant-track-2_1.ogg",
 ]
 var id_song: int = 1; # start at the first ambiant song
 var music_player_started: bool = false;
@@ -63,5 +63,5 @@ func load_end_scene():
 	get_tree().root.add_child(scene)
 	# disconnect the signal
 	music_player.finished.disconnect(_on_music_finished)
-	_load_song("res://game_manager/Moleom main title.wav")
+	_load_song("res://game_manager/Moleom-main-title.ogg")
 	

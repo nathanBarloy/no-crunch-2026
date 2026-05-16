@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://caeasnj5n8fuf"]
+
+[ext_resource type="TileSet" uid="uid://chxly7sq54btw" path="res://mechanics/obstacles/glass.tres" id="1_udp4v"]
+[ext_resource type="Script" uid="uid://bjvf3eked1fxb" path="res://mechanics/obstacles/wall.gd" id="2_o1rik"]
+
+[node name="Glass" type="TileMapLayer" unique_id=1775110316]
+scale = Vector2(0.8, 0.8)
+tile_set = ExtResource("1_udp4v")
+script = ExtResource("2_o1rik")
