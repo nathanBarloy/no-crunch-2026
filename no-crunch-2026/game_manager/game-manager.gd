@@ -9,7 +9,7 @@ var song_paths: Array[String] = [
 	"res://game_manager/moleom-ambiant-track-2_1.ogg",
 ]
 var id_song: int = 1; # start at the first ambiant song
-var music_player_started: bool = false;
+var game_started: bool = false;
 
 @onready var music_player: AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var mole_sound_player: AudioStreamPlayer = AudioStreamPlayer.new()
@@ -18,21 +18,27 @@ func _ready():
 	add_child(music_player)
 	add_child(mole_sound_player)
 	music_player.finished.connect(_on_music_finished)
+	_load_song("res://game_manager/Moleom-main-title.ogg")
+	#mole_sound_player.
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
 
 func _load_song(song_path):
-	music_player_started = true;
 	music_player.stream = load(song_path)
 	music_player.play()
 
 func _on_music_finished():
-	# Load and play the next song
-	id_song = (id_song + 1) % song_paths.size();
-	var song_path = song_paths[id_song];
-	_load_song(song_path)
+	if game_started:
+		# Load and play the next song
+		id_song = (id_song + 1) % song_paths.size();
+		var song_path = song_paths[id_song];
+		_load_song(song_path)
+	else:
+		id_song = 1;
+		# not in game, so we run the main title song
+		_load_song("res://game_manager/Moleom-main-title.ogg")
 
 # volume between 0.0 and 1.0
 func set_volume(volume: float):
@@ -53,8 +59,8 @@ func load_level(lvl_number: int):
 	current_level_number = lvl_number
 	get_tree().root.add_child(scene)
 	
-	if not music_player_started:
-		music_player_started = true;
+	if not game_started:
+		game_started = true;
 		_load_song(song_paths[id_song])
 		
 		# trigger mole sound
@@ -73,8 +79,9 @@ func load_end_scene():
 	current_scene = scene
 	get_tree().root.add_child(scene)
 	# disconnect the signal
-	music_player.stop()
-	_load_song("res://game_manager/Moleom-main-title.ogg")
+	if game_started:
+		game_started = false;
+		_load_song("res://game_manager/Moleom-main-title.ogg")
 
 func load_title_scene():
 	unload_scene()

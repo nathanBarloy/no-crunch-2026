@@ -2,7 +2,6 @@ extends Node2D
 
 func _ready() -> void:
 	GameManager.current_scene = self
-	$MoleomMainTitle.play()
 
 func _process(delta: float) -> void:
 	pass

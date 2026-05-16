@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c0foxlk7g1wn1" path="res://mechanics/obstacles/target.gd" id="1_cskpx"]
 [ext_resource type="Texture2D" uid="uid://ch5oopcg58m57" path="res://Art/Asset/Cible/CibleNormal.png" id="2_cskpx"]
+[ext_resource type="AudioStream" uid="uid://urebq2sj31pi" path="res://mechanics/obstacles/cracking_crystal.mp3" id="2_n77ca"]
 [ext_resource type="Texture2D" uid="uid://bk6ce2c5r2oau" path="res://Art/Asset/Cible/Animation/CibleF2.png" id="3_7445w"]
 [ext_resource type="Texture2D" uid="uid://ce5tndk4yagkw" path="res://Art/Asset/Cible/Animation/CibleF3.png" id="4_n77ca"]
 [ext_resource type="Texture2D" uid="uid://og2ieh0k6t5w" path="res://Art/Asset/Cible/Animation/CibleF4.png" id="5_busp0"]
-[ext_resource type="AudioStream" uid="uid://cevoc3cw2fphv" path="res://mechanics/obstacles/cracking_crystal.wav" id="6_n77ca"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqvy8"]
 animations = [{
@@ -39,5 +39,5 @@ position = Vector2(-21, -3)
 build_mode = 1
 polygon = PackedVector2Array(21, -73, 41, -56, 65, -55, 75, -46, 87, -12, 91, 39, 85, 72, 73, 84, -56, 74, -65, 61, -57, 24, -28, -43, -26, -56)
 
-[node name="CrackingCrystal" type="AudioStreamPlayer" parent="." unique_id=1524465414]
-stream = ExtResource("6_n77ca")
+[node name="CrackingCrystal" type="AudioStreamPlayer" parent="." unique_id=961112738]
+stream = ExtResource("2_n77ca")

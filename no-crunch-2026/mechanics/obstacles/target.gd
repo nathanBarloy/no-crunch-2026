@@ -10,5 +10,5 @@ func _animate_victory():
 	if not already_won:
 		already_won = true
 		$Sprite2D.play()
-		$CrackingCrystal.volume_db = -7
+		$CrackingCrystal.volume_db = -2
 		$CrackingCrystal.play()

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://wg4052wy5y37"]
 
 [ext_resource type="Script" uid="uid://b6io3xmhqxgat" path="res://title_screen/title_screen.gd" id="1_g2mvh"]
-[ext_resource type="AudioStream" uid="uid://cfdd2c6qqrslq" path="res://title_screen/Moleom-main-title.ogg" id="2_dxpbd"]
 [ext_resource type="Texture2D" uid="uid://b85ofs4262lxr" path="res://Art/BackGround.png" id="3_2dq6q"]
 [ext_resource type="Texture2D" uid="uid://b6gsuuvgwbku7" path="res://Art/title/logo_moleom.png" id="4_fk0fn"]
 [ext_resource type="Texture2D" uid="uid://c1jufvefydn0b" path="res://Art/title/bouton_play.png" id="5_oqrgu"]
@@ -9,9 +8,6 @@
 
 [node name="TitleScreen" type="Node2D" unique_id=276799316]
 script = ExtResource("1_g2mvh")
-
-[node name="MoleomMainTitle" type="AudioStreamPlayer" parent="." unique_id=1718767931]
-stream = ExtResource("2_dxpbd")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=613603444]
 z_index = -1

@@ -21,6 +21,8 @@ func _ready() -> void:
 	EventBus.drop_request.connect(_on_redraw_request)
 	EventBus.take_request.connect(_on_redraw_request)
 	instantiate_laser($Geode.position, geode_angle)
+	$LaserEmit.volume_db = -13
+	$LaserEmit.play()
 	
 	
 func _process(delta: float) -> void:

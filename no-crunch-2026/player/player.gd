@@ -53,7 +53,7 @@ func get_velo() -> Vector2:
 			walking = true
 			# play the walking sound
 			$Walking.pitch_scale = 1.5
-			$Walking.volume_db = -12
+			$Walking.volume_db = -10
 			$Walking.play(0.5)
 	if velo.length() == 0:
 		walking = false
