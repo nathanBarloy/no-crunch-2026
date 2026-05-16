@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cdb3lw8vrea7t" path="res://levels/Tableau.tscn" id="1_26eyh"]
 [ext_resource type="Texture2D" uid="uid://diboyx827a2ce" path="res://icon.svg" id="2_02d2f"]
+[ext_resource type="PackedScene" uid="uid://d0j5p2bsjra34" path="res://mechanics/laser/laser_manager.tscn" id="3_maxiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hiy2l"]
 size = Vector2(56, 48)
@@ -17,3 +18,6 @@ shape = SubResource("RectangleShape2D_hiy2l")
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" index="1" unique_id=429920761]
 scale = Vector2(0.4375, 0.375)
 texture = ExtResource("2_02d2f")
+
+[node name="LaserManager" parent="." index="8" unique_id=2147237949 instance=ExtResource("3_maxiy")]
+position = Vector2(438, 276)
