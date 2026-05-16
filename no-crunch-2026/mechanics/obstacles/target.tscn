@@ -27,9 +27,6 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_7445w"]
-points = PackedVector2Array(-51, 2, -46, 70, 100, 71, 74, -46, 21, -73, -25, -47)
-
 [node name="Target" type="Area2D" unique_id=1004707607]
 script = ExtResource("1_cskpx")
 
@@ -37,9 +34,10 @@ script = ExtResource("1_cskpx")
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_nqvy8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=318871817]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1607218095]
 position = Vector2(-21, -3)
-shape = SubResource("ConvexPolygonShape2D_7445w")
+build_mode = 1
+polygon = PackedVector2Array(21, -73, 41, -56, 65, -55, 75, -46, 87, -12, 91, 39, 85, 72, 73, 84, -56, 74, -65, 61, -57, 24, -28, -43, -26, -56)
 
 [node name="CrackingCrystal" type="AudioStreamPlayer" parent="." unique_id=1524465414]
 stream = ExtResource("6_n77ca")
