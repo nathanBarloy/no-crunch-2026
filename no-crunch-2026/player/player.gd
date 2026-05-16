@@ -7,7 +7,7 @@ var is_moving_left = false
 var is_moving_up = false
 var is_moving_down = false
 var objects_in_range: Array[Node2D] = []
-
+var walking: bool = false;
 
 func _physics_process(delta: float) -> void:
 	# Process movement
@@ -40,6 +40,15 @@ func get_velo() -> Vector2:
 	
 	if velo.length() != 0:
 		velo = velo.normalized() * speed
+		if !walking:
+			walking = true
+			# play the walking sound
+			$Walking.pitch_scale = 1.5
+			$Walking.volume_db = -12
+			$Walking.play(0.5)
+	if velo.length() == 0:
+		walking = false
+		$Walking.stop()
 	
 	return velo
 

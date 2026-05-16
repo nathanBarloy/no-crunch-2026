@@ -12,9 +12,11 @@ var id_song: int = 1; # start at the first ambiant song
 var music_player_started: bool = false;
 
 @onready var music_player: AudioStreamPlayer = AudioStreamPlayer.new()
+@onready var mole_sound_player: AudioStreamPlayer = AudioStreamPlayer.new()
 
 func _ready():
 	add_child(music_player)
+	add_child(mole_sound_player)
 	music_player.finished.connect(_on_music_finished)
 
 func _load_song(song_path):
@@ -46,9 +48,14 @@ func load_level(lvl_number: int):
 	current_scene = scene
 	current_level_number = lvl_number
 	get_tree().root.add_child(scene)
+	
 	if not music_player_started:
 		music_player_started = true;
 		_load_song(song_paths[id_song])
+		
+		# trigger mole sound
+		mole_sound_player.stream = load("res://game_manager/mole.mp3")
+		mole_sound_player.play()
 
 func load_next_level():
 	if level_exists(current_level_number+1):

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brc0e1bv68a6b" path="res://player/player.gd" id="1_3c3w1"]
 [ext_resource type="Texture2D" uid="uid://diboyx827a2ce" path="res://icon.svg" id="1_ulp21"]
+[ext_resource type="AudioStream" uid="uid://dxuc0t7aao1mx" path="res://player/walking.mp3" id="3_wnvi2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3c3w1"]
 size = Vector2(106, 107)
@@ -28,6 +29,9 @@ collision_layer = 2
 shape = SubResource("RectangleShape2D_wnvi2")
 
 [node name="Inventory" type="Node2D" parent="." unique_id=1534953805]
+
+[node name="Walking" type="AudioStreamPlayer" parent="." unique_id=918864226]
+stream = ExtResource("3_wnvi2")
 
 [connection signal="area_entered" from="InteractionZone" to="." method="_on_area_entered"]
 [connection signal="area_exited" from="InteractionZone" to="." method="_on_area_exited"]
