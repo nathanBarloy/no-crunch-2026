@@ -21,6 +21,15 @@ func _physics_process(delta: float) -> void:
 	is_moving_down = velo.y > 0
 	is_moving_up = velo.y < 0
 	
+	# Update animation
+	if velo == Vector2.ZERO:
+		$AnimatedSprite2D.play("idle")
+	else:
+		$AnimatedSprite2D.play("walk")
+	if is_moving_right:
+		$AnimatedSprite2D.flip_h = false
+	if is_moving_left:
+		$AnimatedSprite2D.flip_h = true
 	
 	# Process action
 	if Input.is_action_just_pressed("action"):
