@@ -7,7 +7,8 @@ var is_moving_left = false
 var is_moving_up = false
 var is_moving_down = false
 var objects_in_range: Array[Node2D] = []
-var walking: bool = false;
+var walking: bool = false
+var has_object := false;
 
 func _physics_process(delta: float) -> void:
 	# Process movement
@@ -24,12 +25,20 @@ func _physics_process(delta: float) -> void:
 	# Update animation
 	if velo == Vector2.ZERO:
 		$AnimatedSprite2D.play("idle")
-	else:
+	elif not has_object:
 		$AnimatedSprite2D.play("walk")
-	if is_moving_right:
-		$AnimatedSprite2D.flip_h = false
-	if is_moving_left:
-		$AnimatedSprite2D.flip_h = true
+		if is_moving_right:
+			$AnimatedSprite2D.flip_h = false
+		if is_moving_left:
+			$AnimatedSprite2D.flip_h = true
+	else:
+		$AnimatedSprite2D.play("walk_with_object")
+		if is_moving_right:
+			$AnimatedSprite2D.flip_h = true
+		if is_moving_left:
+			$AnimatedSprite2D.flip_h = false
+	
+
 	
 	# Process action
 	if Input.is_action_just_pressed("action"):
@@ -70,7 +79,10 @@ func take(object: Node2D) -> void:
 	var area := object as Area2D
 	if area:
 		area.collision_layer = 2
+	object.scale *= 0.5
 	$Inventory.add_child(object)
+	has_object = true
+	$Hands.visible = true
 	object.position = Vector2.ZERO
 
 
@@ -79,6 +91,9 @@ func drop() -> void:
 	var area := drop_node as Area2D
 	if area:
 		area.collision_layer = 1
+	has_object = false
+	$Hands.visible = false
+	drop_node.scale *= 1.5
 	$Inventory.remove_child(drop_node)
 	EventBus.drop_request.emit(drop_node)
 
