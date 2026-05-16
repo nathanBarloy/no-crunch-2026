@@ -93,7 +93,7 @@ func drop() -> void:
 		area.collision_layer = 1
 	has_object = false
 	$Hands.visible = false
-	drop_node.scale *= 1.5
+	drop_node.scale *= 2
 	$Inventory.remove_child(drop_node)
 	EventBus.drop_request.emit(drop_node)
 
