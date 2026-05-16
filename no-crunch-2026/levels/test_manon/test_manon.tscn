@@ -8,4 +8,4 @@
 [node name="Tableau" parent="TableauList" parent_id_path=PackedInt32Array(1112364438) index="0" unique_id=1175971842 instance=ExtResource("2_6xqvq")]
 
 [node name="Player" parent="." index="1" unique_id=1815351562]
-position = Vector2(1137, 331)
+position = Vector2(877, 387)

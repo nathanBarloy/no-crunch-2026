@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://chm0r7htneq3w" path="res://mechanics/obstacles/wall.tscn" id="3_1wtrm"]
 [ext_resource type="PackedScene" uid="uid://c7waiufd7jnf0" path="res://mechanics/obstacles/target.tscn" id="5_s4v2x"]
 [ext_resource type="PackedScene" uid="uid://dg616cv84t3aw" path="res://mechanics/obstacles/mirror.tscn" id="5_xrjqc"]
+[ext_resource type="PackedScene" uid="uid://dck3nc2b6e5bm" path="res://mechanics/obstacles/filter.tscn" id="6_xrjqc"]
 
 [node name="Tableau" unique_id=1175971842 instance=ExtResource("1_6hbeh")]
 
@@ -21,3 +22,6 @@ position = Vector2(539, 697)
 [node name="Mirror" parent="." index="9" unique_id=565877863 instance=ExtResource("5_xrjqc")]
 position = Vector2(668, 397)
 rotation = 0.7853982
+
+[node name="Filter" parent="." index="10" unique_id=1912426985 instance=ExtResource("6_xrjqc")]
+position = Vector2(205, 431)
