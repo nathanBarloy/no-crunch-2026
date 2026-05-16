@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://becmdcr88qr61"]
 
-[ext_resource type="Texture2D" uid="uid://cp2nlf8d7x1io" path="res://mechanics/obstacles/waltile.png" id="1_pls5s"]
+[ext_resource type="Texture2D" uid="uid://cr7fobwmkvfd3" path="res://mechanics/obstacles/MurTail.png" id="1_pls5s"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pls5s"]
 polygon = PackedVector2Array(-13, -14, 32, -21, 75, -20, 75, 20, -2, 20)
