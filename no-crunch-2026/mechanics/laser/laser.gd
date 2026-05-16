@@ -78,6 +78,9 @@ func add_exceptions():
 	if come_from == "filter":
 		for obj in get_tree().get_nodes_in_group("filter"):
 			add_exception(obj)
+	if come_from == "unfilter":
+		for obj in get_tree().get_nodes_in_group("unfilter"):
+			add_exception(obj)
 	
 	if not filtered:
 		if come_from == "up" or come_from == "down":

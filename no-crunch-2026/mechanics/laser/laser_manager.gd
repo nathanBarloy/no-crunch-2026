@@ -81,7 +81,7 @@ func _on_laser_collision(collided_laser: Laser):
 	last_collider_position = collided_point
 	
 	# generate next laser
-	#print("bump: " , collided_object.get_groups())
+	print("bump: " , collided_object.get_groups())
 	if collided_object is Mirror:
 		var normal: Vector2 = collided_laser.get_collision_normal()
 		var laser_vec = collided_laser.target_position
@@ -95,6 +95,9 @@ func _on_laser_collision(collided_laser: Laser):
 	elif collided_object is Filter:
 		instantiate_laser(collided_point, collided_angle, laser_index, "filter", true)
 		
+	elif collided_object is Unfilter:
+		instantiate_laser(collided_point, collided_angle, laser_index, "unfilter", false)
+			
 	elif not collided_laser.filtered:
 
 		if "tableau_border_up" in collided_object.get_groups():
