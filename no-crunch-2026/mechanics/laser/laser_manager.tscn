@@ -23,6 +23,7 @@ glow_hdr_luminance_cap = 73.17
 script = ExtResource("1_ym85s")
 
 [node name="Geode" type="Area2D" parent="." unique_id=341586492]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Geode" unique_id=1121747643]
 shape = SubResource("CircleShape2D_8qx13")
@@ -38,3 +39,4 @@ texture = ExtResource("2_ym85s")
 environment = SubResource("Environment_68d25")
 
 [connection signal="area_entered" from="Geode" to="." method="_on_geode_area_entered"]
+[connection signal="area_exited" from="Geode" to="." method="_on_geode_area_exited"]
