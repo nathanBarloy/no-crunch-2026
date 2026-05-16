@@ -6,7 +6,7 @@ extends RayCast2D
 @export var color :Color = Color("#ed77ff")
 @onready var line_2d: Line2D = %Line2D
 
-var cast_speed: float = 15.0
+var cast_speed: float = 20.0
 var max_length: float = 10000
 
 # Intrinsic to laser

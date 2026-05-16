@@ -1,0 +1,20 @@
+[gd_scene format=4 uid="uid://cl768qaplmndg"]
+
+[ext_resource type="PackedScene" uid="uid://cdb3lw8vrea7t" path="res://levels/Tableau.tscn" id="1_7l50m"]
+[ext_resource type="PackedScene" uid="uid://dck3nc2b6e5bm" path="res://mechanics/obstacles/filter.tscn" id="2_d25ec"]
+[ext_resource type="PackedScene" uid="uid://d0j5p2bsjra34" path="res://mechanics/laser/laser_manager.tscn" id="3_oiuw2"]
+
+[node name="Tableau" unique_id=1175971842 instance=ExtResource("1_7l50m")]
+
+[node name="Wall" parent="." index="5" unique_id=1775110316]
+tile_map_data = PackedByteArray("AAAPAAgAAAABAAAAAAAOAAgAAAABAAAAAAANAAgAAAABAAAAAAAMAAgAAAABAAAAAAALAAgAAAABAAAAAAAKAAgAAAABAAAAAAAJAAgAAAABAAAAAAAIAAgAAAABAAAAAAAHAAgAAAABAAAAAAAGAAgAAAABAAAAAAAFAAgAAAABAAAAAAAEAAgAAAABAAAAAAADAAgAAAABAAAAAAACAAgAAAABAAAAAAABAAgAAAABAAAAAAAAAAgAAAACAAEAAAAAAAcAAAABAAEAAAAAAAYAAAABAAEAAAAAAAUAAAABAAEAAAAAAAQAAAABAAEAAAAAAAMAAAABAAEAAAAAAAIAAAABAAEAAAAAAAEAAAABAAEAAAAAAAAAAAACAAIAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAADAAAAAAAPAAQAAAABAAEAAAAPAAUAAAABAAEAAAAPAAYAAAACAAEAAAA=")
+
+[node name="Glass" parent="." index="6" unique_id=1605285231]
+tile_map_data = PackedByteArray("AAAPAAEAAAABAAEAAAAPAAIAAAABAAEAAAAPAAMAAAABAAEAAAA=")
+
+[node name="Filter" parent="." index="7" unique_id=565877863 instance=ExtResource("2_d25ec")]
+position = Vector2(1446, 728)
+
+[node name="LaserManager" parent="." index="8" unique_id=2147237949 instance=ExtResource("3_oiuw2")]
+position = Vector2(450, 784)
+geode_angle = -1.5699999999999998
