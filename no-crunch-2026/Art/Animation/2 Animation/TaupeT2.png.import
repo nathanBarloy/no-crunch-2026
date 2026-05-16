@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3di1jokmrbr6"
-path="res://.godot/imported/Filtre.png-00368b54005453c4828d8ef9ccac6b7f.ctex"
+uid="uid://qkp8qtux0nnn"
+path="res://.godot/imported/TaupeT2.png-f3311d4ddb07554eeaaf86a4d67019ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Asset/Filtre/Filtre.png"
-dest_files=["res://.godot/imported/Filtre.png-00368b54005453c4828d8ef9ccac6b7f.ctex"]
+source_file="res://Art/Animation/2 Animation/TaupeT2.png"
+dest_files=["res://.godot/imported/TaupeT2.png-f3311d4ddb07554eeaaf86a4d67019ac.ctex"]
 
 [params]
 

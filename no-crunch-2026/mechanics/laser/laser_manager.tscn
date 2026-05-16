@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dbwo4bycs6kh4" path="res://Art/geode/geode.png" id="2_ym85s"]
 [ext_resource type="AudioStream" uid="uid://brr58l6qqm3j7" path="res://mechanics/obstacles/mirror.wav" id="3_68d25"]
 [ext_resource type="AudioStream" uid="uid://cy0j6q02nrtqf" path="res://mechanics/laser/laser-emit.mp3" id="4_ebhkh"]
+[ext_resource type="AudioStream" uid="uid://dhfjqkp6fsb5n" path="res://mechanics/laser/geode-rotate.mp3" id="5_gg8eb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qx13"]
 radius = 68.41052
@@ -47,6 +48,9 @@ stream = ExtResource("3_68d25")
 
 [node name="LaserEmit" type="AudioStreamPlayer" parent="." unique_id=2142724743]
 stream = ExtResource("4_ebhkh")
+
+[node name="GeodeRotate" type="AudioStreamPlayer" parent="." unique_id=938103093]
+stream = ExtResource("5_gg8eb")
 
 [connection signal="area_entered" from="Geode" to="." method="_on_geode_area_entered"]
 [connection signal="area_exited" from="Geode" to="." method="_on_geode_area_exited"]

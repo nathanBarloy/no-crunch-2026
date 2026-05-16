@@ -10,6 +10,8 @@ var song_paths: Array[String] = [
 ]
 var id_song: int = 1; # start at the first ambiant song
 var game_started: bool = false;
+var mouse_timer: float = 0.0;
+var mouse_timer_thresh: float = 10.0;
 
 @onready var music_player: AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var mole_sound_player: AudioStreamPlayer = AudioStreamPlayer.new()
@@ -19,9 +21,16 @@ func _ready():
 	add_child(mole_sound_player)
 	music_player.finished.connect(_on_music_finished)
 	_load_song("res://game_manager/Moleom-main-title.ogg")
-	#mole_sound_player.
 
 func _process(delta: float) -> void:
+	mouse_timer += delta
+	if mouse_timer >= mouse_timer_thresh && game_started:
+		mouse_timer_thresh = randf_range(8.0, 25.0)
+		mouse_timer = 0.0
+		# trigger mole sound
+		mole_sound_player.stream = load("res://game_manager/mole.mp3")
+		mole_sound_player.play()
+	
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
 

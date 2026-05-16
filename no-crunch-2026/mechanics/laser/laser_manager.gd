@@ -53,6 +53,7 @@ func _rotate(angle: float) ->void:
 	_clear_lasers()
 	geode_angle += angle
 	$GeodeSprite.rotation = geode_angle
+	$GeodeRotate.play()
 	fire_geode()
 	
 func _clear_lasers():
