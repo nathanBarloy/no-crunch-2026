@@ -90,3 +90,4 @@ turn-anticlock={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.039100006, 0.10273337, 0.23, 1)
