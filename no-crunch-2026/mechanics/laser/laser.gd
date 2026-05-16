@@ -75,21 +75,35 @@ func add_exceptions():
 	for obj in get_tree().get_nodes_in_group("player"):
 		if obj is CollisionObject2D:
 			add_exception(obj)
-	if come_from == "up":
-			for obj in get_tree().get_nodes_in_group("tableau_border_down"):
-				add_exception(obj)
-	if come_from == "down":
-			for obj in get_tree().get_nodes_in_group("tableau_border_up"):
-				add_exception(obj)
-	if come_from == "left":
-			for obj in get_tree().get_nodes_in_group("tableau_border_right"):
-				add_exception(obj)
-	if come_from == "right":
-			for obj in get_tree().get_nodes_in_group("tableau_border_left"):
-				add_exception(obj)
 	if come_from == "filter":
 		for obj in get_tree().get_nodes_in_group("filter"):
 			add_exception(obj)
+	
+	if not filtered:
+		if come_from == "up":
+				for obj in get_tree().get_nodes_in_group("tableau_border_down"):
+					add_exception(obj)
+		if come_from == "down":
+				for obj in get_tree().get_nodes_in_group("tableau_border_up"):
+					add_exception(obj)
+		if come_from == "left":
+				for obj in get_tree().get_nodes_in_group("tableau_border_right"):
+					add_exception(obj)
+		if come_from == "right":
+				for obj in get_tree().get_nodes_in_group("tableau_border_left"):
+					add_exception(obj)
+					
+	else:
+		for obj in get_tree().get_nodes_in_group("tableau_border_up"):
+			add_exception(obj)
+		for obj in get_tree().get_nodes_in_group("tableau_border_down"):
+			add_exception(obj)
+		for obj in get_tree().get_nodes_in_group("tableau_border_left"):
+			add_exception(obj)
+		for obj in get_tree().get_nodes_in_group("tableau_border_right"):
+			add_exception(obj)
+		
+
 		
 	
 		
