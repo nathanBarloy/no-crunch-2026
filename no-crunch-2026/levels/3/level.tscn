@@ -9,3 +9,13 @@
 
 [node name="Player" parent="." index="1" unique_id=1815351562]
 position = Vector2(1440, 248)
+
+[node name="Label" type="Label" parent="." index="4" unique_id=1824134]
+offset_left = 296.0
+offset_top = 576.0
+offset_right = 1008.0
+offset_bottom = 704.0
+theme_override_font_sizes/font_size = 40
+text = "Prendre et lâcher un objet avec F (sur manette: avec A)"
+horizontal_alignment = 1
+autowrap_mode = 3

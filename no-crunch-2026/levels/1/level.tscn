@@ -6,3 +6,13 @@
 [node name="Level" unique_id=281701423 instance=ExtResource("1_7kk7o")]
 
 [node name="Tableau" parent="TableauList" parent_id_path=PackedInt32Array(1112364438) index="0" unique_id=1175971842 instance=ExtResource("2_cj732")]
+
+[node name="Label" type="Label" parent="." index="4" unique_id=517376899]
+offset_left = 120.0
+offset_top = 264.0
+offset_right = 936.0
+offset_bottom = 400.0
+theme_override_font_sizes/font_size = 40
+text = "Tourner la géode avec les touches A et E (sur manette: avec les gachettes)"
+horizontal_alignment = 1
+autowrap_mode = 1
