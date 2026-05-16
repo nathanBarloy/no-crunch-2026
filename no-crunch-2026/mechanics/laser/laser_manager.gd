@@ -113,7 +113,6 @@ func _on_laser_collision(collided_laser: Laser):
 			right_position.x -= 1920
 			instantiate_laser(right_position, collided_angle, laser_index, "right")
 
-	
 
 
 func _on_geode_area_entered(area: Area2D) -> void:
