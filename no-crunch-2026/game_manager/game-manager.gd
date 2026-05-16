@@ -3,6 +3,35 @@ extends Node
 var current_scene: Node = null
 var current_level_number: int = 0
 
+var song_paths: Array[String] = [
+	"res://game_manager/Moleom main title.wav",
+	"res://game_manager/moleom ambiant song 1.wav",
+	"res://game_manager/moleom ambiant track 2.wav",
+]
+var id_song: int = 1; # start at the first ambiant song
+var music_player_started: bool = false;
+
+@onready var music_player: AudioStreamPlayer = AudioStreamPlayer.new()
+
+func _ready():
+	add_child(music_player)
+	music_player.finished.connect(_on_music_finished)
+
+func _load_song(song_path):
+	music_player_started = true;
+	music_player.stream = load(song_path)
+	music_player.play()
+
+func _on_music_finished():
+	# Load and play the next song
+	id_song = (id_song + 1) % song_paths.size();
+	var song_path = song_paths[id_song];
+	_load_song(song_path)
+
+# volume between 0.0 and 1.0
+func set_volume(volume: float):
+	music_player.volume_db = linear_to_db(volume)  # volume entre 0.0 et 1.0
+
 func unload_scene():
 	if current_scene:
 		current_scene.queue_free()
@@ -17,6 +46,9 @@ func load_level(lvl_number: int):
 	current_scene = scene
 	current_level_number = lvl_number
 	get_tree().root.add_child(scene)
+	if not music_player_started:
+		music_player_started = true;
+		_load_song(song_paths[id_song])
 
 func load_next_level():
 	if level_exists(current_level_number+1):
@@ -29,4 +61,7 @@ func load_end_scene():
 	var scene = load("res://title_screen/end_screen.tscn").instantiate()
 	current_scene = scene
 	get_tree().root.add_child(scene)
+	# disconnect the signal
+	music_player.finished.disconnect(_on_music_finished)
+	_load_song("res://game_manager/Moleom main title.wav")
 	

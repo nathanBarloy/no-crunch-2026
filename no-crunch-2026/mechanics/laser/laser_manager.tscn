@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bbrkm5t51xo5y" path="res://mechanics/laser/laser_manager.gd" id="1_ym85s"]
 [ext_resource type="Texture2D" uid="uid://dbwo4bycs6kh4" path="res://Art/geode/geode.png" id="2_ym85s"]
+[ext_resource type="AudioStream" uid="uid://brr58l6qqm3j7" path="res://mechanics/obstacles/mirror.wav" id="3_68d25"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qx13"]
 radius = 68.41052
@@ -38,6 +39,9 @@ texture = ExtResource("2_ym85s")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1193388783]
 environment = SubResource("Environment_68d25")
+
+[node name="LaserReflection" type="AudioStreamPlayer" parent="." unique_id=1820570079]
+stream = ExtResource("3_68d25")
 
 [connection signal="area_entered" from="Geode" to="." method="_on_geode_area_entered"]
 [connection signal="area_exited" from="Geode" to="." method="_on_geode_area_exited"]

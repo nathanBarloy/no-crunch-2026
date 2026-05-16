@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccmfqq04vmgav"
+path="res://.godot/imported/moleom ambiant song 1.wav-b22948abade2fe27ea81ace52d8d66ba.sample"
+
+[deps]
+
+source_file="res://game_manager/moleom ambiant song 1.wav"
+dest_files=["res://.godot/imported/moleom ambiant song 1.wav-b22948abade2fe27ea81ace52d8d66ba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

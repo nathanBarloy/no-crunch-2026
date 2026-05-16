@@ -65,7 +65,8 @@ func _on_laser_collision(collided_laser: Laser):
 		var laser_vec = collided_laser.target_position
 		var reflected_angle = laser_vec.bounce(normal).angle()
 		instantiate_laser(collided_point, reflected_angle)
-
+		$LaserReflection.volume_db = 10
+		$LaserReflection.play()
 	elif collided_object is Target:
 		EventBus.victory.emit()
 
