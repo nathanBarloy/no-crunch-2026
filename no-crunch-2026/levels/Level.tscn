@@ -16,7 +16,7 @@ position = Vector2(960, 540)
 anchor_mode = 0
 
 [node name="VictoryTimer" type="Timer" parent="." unique_id=83908445]
-wait_time = 4.0
+wait_time = 5.0
 one_shot = true
 
 [connection signal="timeout" from="VictoryTimer" to="." method="_on_victory_timer_timeout"]
