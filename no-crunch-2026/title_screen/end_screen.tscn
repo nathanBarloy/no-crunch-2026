@@ -1,9 +1,17 @@
 [gd_scene format=3 uid="uid://cicsqqjrjr5ed"]
 
 [ext_resource type="Texture2D" uid="uid://c6q08pwdsu64w" path="res://title_screen/credits.png" id="1_1bhlu"]
+[ext_resource type="Script" uid="uid://dfcppkvoc1ihl" path="res://title_screen/end_screen.gd" id="1_ki6fo"]
 
 [node name="EndScreen" type="Node2D" unique_id=884341636]
+script = ExtResource("1_ki6fo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=997492044]
 texture = ExtResource("1_1bhlu")
 centered = false
+
+[node name="Timer" type="Timer" parent="." unique_id=1035239479]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
