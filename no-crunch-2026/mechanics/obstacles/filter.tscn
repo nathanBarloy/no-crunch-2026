@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dck3nc2b6e5bm"]
+
+[ext_resource type="Script" uid="uid://d0ei71o6ar086" path="res://mechanics/obstacles/filter.gd" id="1_1lgip"]
+[ext_resource type="Texture2D" uid="uid://dvgekogva5m6j" path="res://Art/Asset/Mirroir/Mirroir.png" id="2_04g7i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mi5qh"]
+size = Vector2(2.9999995, 245)
+
+[node name="Filter" type="Area2D" unique_id=565877863 groups=["filter", "pickable"]]
+script = ExtResource("1_1lgip")
+
+[node name="FilterCollision" type="CollisionShape2D" parent="." unique_id=2021159094 groups=["LaserGroup"]]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_mi5qh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1266594396]
+modulate = Color(0.2118701, 0.7487, 0.4903251, 1)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_04g7i")

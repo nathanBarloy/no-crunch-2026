@@ -13,6 +13,7 @@ var max_length: float = 5000
 @export var is_casting := false: set = set_is_casting
 @export var angle: float = 0 # in radians
 var already_collided: bool = false
+var filtered := false
 
 var come_from: String = ""
 var laser_index: int = 0
@@ -24,8 +25,8 @@ func _ready() -> void:
 	line_2d.points[0] = Vector2.ZERO
 	line_2d.points[1] = Vector2.ZERO
 	target_position = Vector2.ZERO
-	set_color(color)
 	line_2d.visible = true
+	set_color(color)
 	add_exceptions()
 	set_is_casting(true)
 	
@@ -86,5 +87,9 @@ func add_exceptions():
 	if come_from == "right":
 			for obj in get_tree().get_nodes_in_group("tableau_border_left"):
 				add_exception(obj)
+	if come_from == "filter":
+		for obj in get_tree().get_nodes_in_group("filter"):
+			add_exception(obj)
+		
 	
 		

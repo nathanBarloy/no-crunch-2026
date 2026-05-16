@@ -4,6 +4,7 @@ extends Node2D
 var laser = preload("res://mechanics/laser/laser.tscn")
 @export var geode_angle: float = 0
 var looping_color: Color = Color("#ed77ff")
+var filtered_color: Color = Color(0.282, 0.677, 0.503, 1.0)
 
 var laser_index: int = 0
 
@@ -24,13 +25,17 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("turn-anticlock"):
 			_rotate(-PI/8)
 	
-func instantiate_laser(init_position: Vector2, laser_angle: float, index: int = 0, come_from: String = "") -> Laser:
+func instantiate_laser(init_position: Vector2, laser_angle: float, index: int = 0, come_from: String = "", filtered := false) -> Laser:
 	var new_laser: Laser = laser.instantiate()
 	new_laser.position = init_position
 	new_laser.angle = laser_angle
 	new_laser.come_from = come_from
-	new_laser.color = looping_color
+	if filtered:
+		new_laser.color = filtered_color
+	else:
+		new_laser.color = looping_color
 	new_laser.laser_index = index
+	new_laser.filtered = filtered
 	$Geode.add_child(new_laser)
 	new_laser.laser_collision.connect(_on_laser_collision)
 	return new_laser
@@ -69,26 +74,31 @@ func _on_laser_collision(collided_laser: Laser):
 		$LaserReflection.play()
 	elif collided_object is Target:
 		EventBus.victory.emit()
+		
+	elif collided_object is Filter:
+		instantiate_laser(collided_point, collided_laser.angle, laser_index, "filter", true)
+		
+	elif not collided_laser.filtered:
 
-	elif "tableau_border_up" in collided_object.get_groups():
-		var down_position: Vector2 = collided_point
-		down_position.y += DisplayServer.screen_get_size().y
-		instantiate_laser(down_position, collided_laser.angle, laser_index, "up")
-		
-	elif "tableau_border_down" in collided_object.get_groups():
-		var up_position: Vector2 = collided_point
-		up_position.y -= DisplayServer.screen_get_size().y
-		instantiate_laser(up_position, collided_laser.angle, laser_index, "down")
-		
-	elif "tableau_border_left" in collided_object.get_groups():
-		var right_position: Vector2 = collided_point
-		right_position.x += DisplayServer.screen_get_size().x
-		instantiate_laser(right_position, collided_laser.angle, laser_index, "left")
-		
-	elif "tableau_border_right" in collided_object.get_groups():
-		var right_position: Vector2 = collided_point
-		right_position.x -= DisplayServer.screen_get_size().x
-		instantiate_laser(right_position, collided_laser.angle, laser_index, "right")
+		if "tableau_border_up" in collided_object.get_groups():
+			var down_position: Vector2 = collided_point
+			down_position.y += DisplayServer.screen_get_size().y
+			instantiate_laser(down_position, collided_laser.angle, laser_index, "up")
+			
+		elif "tableau_border_down" in collided_object.get_groups():
+			var up_position: Vector2 = collided_point
+			up_position.y -= DisplayServer.screen_get_size().y
+			instantiate_laser(up_position, collided_laser.angle, laser_index, "down")
+			
+		elif "tableau_border_left" in collided_object.get_groups():
+			var right_position: Vector2 = collided_point
+			right_position.x += DisplayServer.screen_get_size().x
+			instantiate_laser(right_position, collided_laser.angle, laser_index, "left")
+			
+		elif "tableau_border_right" in collided_object.get_groups():
+			var right_position: Vector2 = collided_point
+			right_position.x -= DisplayServer.screen_get_size().x
+			instantiate_laser(right_position, collided_laser.angle, laser_index, "right")
 
 	
 
