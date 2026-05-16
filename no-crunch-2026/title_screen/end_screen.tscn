@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://cicsqqjrjr5ed"]
 
+[ext_resource type="Texture2D" uid="uid://c6q08pwdsu64w" path="res://title_screen/credits.png" id="1_1bhlu"]
+
 [node name="EndScreen" type="Node2D" unique_id=884341636]
 
-[node name="Label" type="Label" parent="." unique_id=1063166821]
-offset_right = 1920.0
-offset_bottom = 760.0
-theme_override_font_sizes/font_size = 400
-text = "Gagné"
-horizontal_alignment = 1
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=997492044]
+texture = ExtResource("1_1bhlu")
+centered = false
