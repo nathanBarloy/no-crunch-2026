@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://r6sh2a53vtkp"]
+
+[ext_resource type="PackedScene" uid="uid://c6qrjkx4mcey5" path="res://levels/Level.tscn" id="1_5v6dt"]
+[ext_resource type="PackedScene" uid="uid://c53kit6tlt1g5" path="res://levels/5/tableau_1_1.tscn" id="2_jjae1"]
+
+[node name="Level" unique_id=281701423 instance=ExtResource("1_5v6dt")]
+
+[node name="Tableau" parent="TableauList" parent_id_path=PackedInt32Array(1112364438) index="0" unique_id=1175971842 instance=ExtResource("2_jjae1")]
+
+[node name="Player" parent="." index="1" unique_id=1815351562]
+position = Vector2(296, 537)
