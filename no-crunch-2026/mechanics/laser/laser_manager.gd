@@ -13,6 +13,8 @@ var nb_intersection: int = 0
 var last_collider_position: Vector2 = Vector2.ZERO
 var last_collider_angle: float = 0
 
+var _time := 0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().physics_frame
@@ -21,12 +23,14 @@ func _ready() -> void:
 	instantiate_laser($Geode.position, geode_angle)
 	
 	
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if nb_intersection > 0:
+		_time += delta
 		if Input.is_action_just_pressed("turn-clock"):
 			_rotate(+PI/8)
 		if Input.is_action_just_pressed("turn-anticlock"):
 			_rotate(-PI/8)
+	
 	
 func instantiate_laser(init_position: Vector2, laser_angle: float, index: int = 0, come_from: String = "", filtered := false) -> Laser:
 	var new_laser: Laser = laser.instantiate()
@@ -117,7 +121,8 @@ func _on_laser_collision(collided_laser: Laser):
 
 func _on_geode_area_entered(area: Area2D) -> void:
 	nb_intersection += 1
-
+	$GeodeSprite.scale *= 1.1
 
 func _on_geode_area_exited(area: Area2D) -> void:
 	nb_intersection -= 1
+	$GeodeSprite.scale *= 0.9
