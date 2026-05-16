@@ -19,6 +19,10 @@ func _ready():
 	add_child(mole_sound_player)
 	music_player.finished.connect(_on_music_finished)
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("escape"):
+		get_tree().quit()
+
 func _load_song(song_path):
 	music_player_started = true;
 	music_player.stream = load(song_path)
