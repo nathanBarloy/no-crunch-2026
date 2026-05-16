@@ -2,16 +2,40 @@
 
 [ext_resource type="Script" uid="uid://b6io3xmhqxgat" path="res://title_screen/title_screen.gd" id="1_g2mvh"]
 [ext_resource type="AudioStream" uid="uid://cfdd2c6qqrslq" path="res://title_screen/Moleom-main-title.ogg" id="2_dxpbd"]
+[ext_resource type="Texture2D" uid="uid://b85ofs4262lxr" path="res://Art/BackGround.png" id="3_2dq6q"]
+[ext_resource type="Texture2D" uid="uid://b6gsuuvgwbku7" path="res://Art/title/logo_moleom.png" id="4_fk0fn"]
+[ext_resource type="Texture2D" uid="uid://c1jufvefydn0b" path="res://Art/title/bouton_play.png" id="5_oqrgu"]
+[ext_resource type="Texture2D" uid="uid://dm0xv8kw1o5l7" path="res://Art/title/bouton_credits.png" id="6_fv0o7"]
 
 [node name="TitleScreen" type="Node2D" unique_id=276799316]
 script = ExtResource("1_g2mvh")
 
-[node name="Label" type="Label" parent="." unique_id=1308746098]
-offset_right = 1926.0
-offset_bottom = 724.0
-theme_override_font_sizes/font_size = 500
-text = "Press F"
-horizontal_alignment = 1
-
 [node name="MoleomMainTitle" type="AudioStreamPlayer" parent="." unique_id=1718767931]
 stream = ExtResource("2_dxpbd")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=613603444]
+z_index = -1
+texture = ExtResource("3_2dq6q")
+centered = false
+
+[node name="Title" type="Sprite2D" parent="." unique_id=963289237]
+position = Vector2(960, 331)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fk0fn")
+
+[node name="ButtonStart" type="Button" parent="." unique_id=205903525]
+offset_left = 768.0
+offset_top = 552.0
+offset_right = 1160.0
+offset_bottom = 712.0
+icon = ExtResource("5_oqrgu")
+
+[node name="ButtonCredits" type="Button" parent="." unique_id=1036302307]
+offset_left = 760.0
+offset_top = 848.0
+offset_right = 1174.0
+offset_bottom = 961.0
+icon = ExtResource("6_fv0o7")
+
+[connection signal="pressed" from="ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="ButtonCredits" to="." method="_on_button_credits_pressed"]

@@ -5,6 +5,13 @@ func _ready() -> void:
 	$MoleomMainTitle.play()
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("action"):
-		GameManager.load_level(1)
+	pass
 		
+
+
+func _on_button_start_pressed() -> void:
+	GameManager.load_level(1)
+
+
+func _on_button_credits_pressed() -> void:
+	GameManager.load_end_scene()
