@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b85ofs4262lxr" path="res://Art/BackGround.png" id="3_2dq6q"]
 [ext_resource type="Texture2D" uid="uid://b6gsuuvgwbku7" path="res://Art/title/logo_moleom.png" id="4_fk0fn"]
 [ext_resource type="Texture2D" uid="uid://c1jufvefydn0b" path="res://Art/title/bouton_play.png" id="5_oqrgu"]
+[ext_resource type="Texture2D" uid="uid://bpw02j4ay0ry1" path="res://Art/no-crunch-logo.png" id="6_fk0fn"]
 [ext_resource type="Texture2D" uid="uid://dm0xv8kw1o5l7" path="res://Art/title/bouton_credits.png" id="6_fv0o7"]
 
 [node name="TitleScreen" type="Node2D" unique_id=276799316]
@@ -32,6 +33,11 @@ offset_top = 848.0
 offset_right = 1174.0
 offset_bottom = 961.0
 icon = ExtResource("6_fv0o7")
+
+[node name="NoCrunchLogo" type="Sprite2D" parent="." unique_id=76116242]
+position = Vector2(360, 552)
+scale = Vector2(0.4037037, 0.4037037)
+texture = ExtResource("6_fk0fn")
 
 [connection signal="pressed" from="ButtonStart" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="ButtonCredits" to="." method="_on_button_credits_pressed"]
