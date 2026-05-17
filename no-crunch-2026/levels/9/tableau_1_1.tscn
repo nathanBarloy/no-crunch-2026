@@ -1,24 +1,20 @@
-[gd_scene format=4 uid="uid://8t37omqwsmig"]
+[gd_scene format=4 uid="uid://cl768qaplmndg"]
 
-[ext_resource type="PackedScene" uid="uid://cdb3lw8vrea7t" path="res://levels/Tableau.tscn" id="1_m37w5"]
-[ext_resource type="PackedScene" uid="uid://c7waiufd7jnf0" path="res://mechanics/obstacles/target.tscn" id="2_uphuv"]
-[ext_resource type="PackedScene" uid="uid://dck3nc2b6e5bm" path="res://mechanics/obstacles/filter.tscn" id="3_imk8o"]
-[ext_resource type="PackedScene" uid="uid://dg616cv84t3aw" path="res://mechanics/obstacles/mirror.tscn" id="4_rh0da"]
+[ext_resource type="PackedScene" uid="uid://cdb3lw8vrea7t" path="res://levels/Tableau.tscn" id="1_7l50m"]
+[ext_resource type="PackedScene" uid="uid://dck3nc2b6e5bm" path="res://mechanics/obstacles/filter.tscn" id="2_d25ec"]
+[ext_resource type="PackedScene" uid="uid://d0j5p2bsjra34" path="res://mechanics/laser/laser_manager.tscn" id="3_oiuw2"]
 
-[node name="Tableau" unique_id=1175971842 instance=ExtResource("1_m37w5")]
+[node name="Tableau" unique_id=1175971842 instance=ExtResource("1_7l50m")]
 
 [node name="Wall" parent="." index="5" unique_id=1775110316]
-tile_map_data = PackedByteArray("AAAPAAgAAAABAAAAAAAOAAgAAAABAAAAAAANAAgAAAABAAAAAAAMAAgAAAABAAAAAAALAAgAAAABAAAAAAAKAAgAAAABAAAAAAAJAAgAAAABAAAAAAAAAAgAAAACAAEAAAAAAAcAAAABAAEAAAAAAAYAAAABAAEAAAAAAAUAAAABAAEAAAAAAAQAAAABAAEAAAAAAAMAAAADAAEAAAAAAAIAAAABAAEAAAAAAAEAAAABAAEAAAAAAAAAAAACAAIAAAAJAAAAAAADAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAFAAMAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAJAAMAAAACAAAAAAAJAAIAAAABAAEAAAAJAAEAAAABAAEAAAA=")
+tile_map_data = PackedByteArray("AAAPAAgAAAABAAAAAAAOAAgAAAABAAAAAAANAAgAAAABAAAAAAAMAAgAAAABAAAAAAALAAgAAAABAAAAAAAKAAgAAAABAAAAAAAJAAgAAAABAAAAAAAIAAgAAAABAAAAAAAHAAgAAAABAAAAAAAGAAgAAAABAAAAAAAFAAgAAAABAAAAAAAEAAgAAAABAAAAAAADAAgAAAABAAAAAAACAAgAAAABAAAAAAABAAgAAAABAAAAAAAAAAgAAAACAAEAAAAAAAcAAAABAAEAAAAAAAYAAAABAAEAAAAAAAUAAAABAAEAAAAAAAQAAAABAAEAAAAAAAMAAAABAAEAAAAAAAIAAAABAAEAAAAAAAEAAAABAAEAAAAAAAAAAAACAAIAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAADAAAAAAAPAAQAAAABAAEAAAAPAAUAAAABAAEAAAAPAAYAAAACAAEAAAA=")
 
 [node name="Glass" parent="." index="6" unique_id=1605285231]
-tile_map_data = PackedByteArray("AAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAIAAgAAAABAAAAAAAHAAgAAAABAAAAAAAGAAgAAAABAAAAAAAFAAgAAAABAAAAAAAEAAgAAAABAAAAAAADAAgAAAABAAAAAAACAAgAAAABAAAAAAABAAgAAAABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAPAAEAAAABAAEAAAAPAAIAAAABAAEAAAAPAAMAAAABAAEAAAA=")
 
-[node name="Target" parent="." index="7" unique_id=1004707607 instance=ExtResource("2_uphuv")]
-position = Vector2(883, 209)
+[node name="Filter" parent="." index="7" unique_id=565877863 instance=ExtResource("2_d25ec")]
+position = Vector2(1446, 728)
 
-[node name="Filter" parent="." index="8" unique_id=565877863 instance=ExtResource("3_imk8o")]
-position = Vector2(1513, 350)
-
-[node name="Mirror" parent="." index="9" unique_id=110313012 instance=ExtResource("4_rh0da")]
-position = Vector2(883.00006, 749.00006)
-rotation = -0.7853982
+[node name="LaserManager" parent="." index="8" unique_id=2147237949 instance=ExtResource("3_oiuw2")]
+position = Vector2(450, 784)
+geode_angle = -1.5699999999999998
