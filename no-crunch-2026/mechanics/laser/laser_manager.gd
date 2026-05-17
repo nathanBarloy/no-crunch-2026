@@ -84,7 +84,6 @@ func _on_laser_collision(collided_laser: Laser):
 	last_collider_position = collided_point
 	
 	# generate next laser
-	print("bump: " , collided_object.get_groups())
 	if collided_object is Mirror:
 		var normal: Vector2 = collided_laser.get_collision_normal()
 		var laser_vec = collided_laser.target_position

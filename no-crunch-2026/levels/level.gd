@@ -124,7 +124,6 @@ func dezoom():
 	camera_target -= Vector2(1900, 1080) * zoom_target / 2
 	zoom_target = 1/zoom_target
 	zoom_target = Vector2(zoom_target, zoom_target)
-	print(camera_target, zoom_target)
 	
 	# Zoom with tween
 	var tween = create_tween().set_parallel(true)
