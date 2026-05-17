@@ -24,22 +24,22 @@ func _transition_tableau(direction: String):
 	if direction == "right":
 		if not $Player.is_moving_right:
 			return
-		camera_cible.x += 1920  # largeur d'un tableau
+		camera_cible.x += DisplayServer.screen_get_size().x  # largeur d'un tableau
 		player_cible.x += $Player.get_size().x + offset_on_transition
 	elif direction == "left":
 		if not $Player.is_moving_left:
 			return
-		camera_cible.x -= 1920
+		camera_cible.x -= DisplayServer.screen_get_size().x
 		player_cible.x -= $Player.get_size().x + offset_on_transition
 	elif direction == "down":
 		if not $Player.is_moving_down:
 			return
-		camera_cible.y += 1080
+		camera_cible.y += DisplayServer.screen_get_size().y
 		player_cible.y += $Player.get_size().y + offset_on_transition
 	elif direction == "up":
 		if not $Player.is_moving_up:
 			return
-		camera_cible.y -= 1080
+		camera_cible.y -= DisplayServer.screen_get_size().y
 		player_cible.y -= $Player.get_size().y + offset_on_transition
 	
 	camera_on_transition = true
@@ -63,7 +63,7 @@ func _get_tableau_from_position(pos: Vector2) -> Tableau:
 		var t := tableau as Tableau
 		if t:
 			var relativ_pos = pos - t.position
-			if (0 <= relativ_pos.x and relativ_pos.x < 1920) and (0 <= relativ_pos.y and relativ_pos.y < 1080):
+			if (0 <= relativ_pos.x and relativ_pos.x < DisplayServer.screen_get_size().x) and (0 <= relativ_pos.y and relativ_pos.y < DisplayServer.screen_get_size().y):
 				return t
 	return
 
@@ -73,13 +73,13 @@ func _get_current_tableau() -> Tableau:
 func _get_neighbour_tableau(direction: String) -> Tableau:
 	var target_pos = $Player.position
 	if direction == "right":
-		target_pos.x += 1920
+		target_pos.x += DisplayServer.screen_get_size().x
 	elif direction == "left":
-		target_pos.x -= 1920
+		target_pos.x -= DisplayServer.screen_get_size().x
 	elif direction == "down":
-		target_pos.y -= 1080
+		target_pos.y -= DisplayServer.screen_get_size().y
 	elif direction == "up":
-		target_pos.y += 1080
+		target_pos.y += DisplayServer.screen_get_size().y
 	else:
 		return
 	return _get_tableau_from_position(target_pos)
@@ -108,8 +108,8 @@ func _get_max_dimensions() -> Array[Vector2]:
 		if t:
 			min_x = min(t.position.x, min_x)
 			min_y = min(t.position.y, min_y)
-			max_x = max(t.position.x+1920, max_x)
-			max_y = max(t.position.y+1080, max_y)
+			max_x = max(t.position.x+DisplayServer.screen_get_size().x, max_x)
+			max_y = max(t.position.y+DisplayServer.screen_get_size().y, max_y)
 	return [Vector2(min_x, min_y), Vector2(max_x, max_y)]
 
 
@@ -119,9 +119,9 @@ func dezoom():
 	var min_corner = corners[0]
 	var max_corner = corners[1]
 	var camera_target = (min_corner+max_corner) / 2
-	var zoom_target = max((max_corner.x - min_corner.x)/1920,
-						(max_corner.y - min_corner.y)/1080)
-	camera_target -= Vector2(1900, 1080) * zoom_target / 2
+	var zoom_target = max((max_corner.x - min_corner.x)/DisplayServer.screen_get_size().x,
+						(max_corner.y - min_corner.y)/DisplayServer.screen_get_size().y)
+	camera_target -= Vector2(1900, DisplayServer.screen_get_size().y) * zoom_target / 2
 	zoom_target = 1/zoom_target
 	zoom_target = Vector2(zoom_target, zoom_target)
 	
