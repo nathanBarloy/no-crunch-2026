@@ -104,22 +104,22 @@ func _on_laser_collision(collided_laser: Laser):
 
 		if "tableau_border_up" in collided_object.get_groups():
 			var down_position: Vector2 = collided_point
-			down_position.y += 1080
+			down_position.y += DisplayServer.screen_get_size().y
 			instantiate_laser(down_position, collided_angle, laser_index, "up")
 			
 		elif "tableau_border_down" in collided_object.get_groups():
 			var up_position: Vector2 = collided_point
-			up_position.y -= 1080
+			up_position.y -= DisplayServer.screen_get_size().y
 			instantiate_laser(up_position, collided_angle, laser_index, "down")
 			
 		elif "tableau_border_left" in collided_object.get_groups():
 			var right_position: Vector2 = collided_point
-			right_position.x += 1920
+			right_position.x += DisplayServer.screen_get_size().x
 			instantiate_laser(right_position, collided_angle, laser_index, "left")
 			
 		elif "tableau_border_right" in collided_object.get_groups():
 			var right_position: Vector2 = collided_point
-			right_position.x -= 1920
+			right_position.x -= DisplayServer.screen_get_size().x
 			instantiate_laser(right_position, collided_angle, laser_index, "right")
 
 
