@@ -7,12 +7,35 @@
 
 [node name="Tableau" parent="TableauList" parent_id_path=PackedInt32Array(1112364438) index="0" unique_id=1175971842 instance=ExtResource("2_cj732")]
 
-[node name="Label" type="Label" parent="." index="4" unique_id=517376899]
-offset_left = 120.0
-offset_top = 264.0
-offset_right = 936.0
-offset_bottom = 400.0
+[node name="Player" parent="." index="1" unique_id=1815351562]
+position = Vector2(368, 520)
+
+[node name="LabelGeode" type="Label" parent="." index="4" unique_id=517376899]
+offset_left = 672.0
+offset_top = 280.0
+offset_right = 1360.0
+offset_bottom = 433.0
 theme_override_font_sizes/font_size = 40
 text = "Tourner la géode avec les touches A et E (sur manette: avec les gachettes)"
 horizontal_alignment = 1
-autowrap_mode = 1
+autowrap_mode = 3
+
+[node name="LabelTaupe" type="Label" parent="." index="5" unique_id=1818809512]
+offset_left = 64.0
+offset_top = 280.0
+offset_right = 712.0
+offset_bottom = 433.0
+theme_override_font_sizes/font_size = 40
+text = "Bouger avec ZQSD ou les flèches directionnelles (sur manette: joystick gauche)"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="LabelTarget" type="Label" parent="." index="6" unique_id=2101436649]
+offset_left = 1440.0
+offset_top = 280.0
+offset_right = 1704.0
+offset_bottom = 381.0
+theme_override_font_sizes/font_size = 40
+text = "Visez la pierre !"
+horizontal_alignment = 1
+autowrap_mode = 3
