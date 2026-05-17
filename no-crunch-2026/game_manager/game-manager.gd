@@ -1,5 +1,6 @@
 extends Node
 
+var is_main_menu = true
 var current_scene: Node = null
 var current_level_number: int = 0
 
@@ -32,7 +33,14 @@ func _process(delta: float) -> void:
 		mole_sound_player.play()
 	
 	if Input.is_action_just_pressed("escape"):
+		escape()
+
+func escape():
+	if is_main_menu:
 		get_tree().quit()
+	else:
+		load_title_scene()
+	
 
 func _load_song(song_path):
 	music_player.stream = load(song_path)
@@ -65,6 +73,7 @@ func load_level(lvl_number: int):
 	unload_scene()
 	var scene = load("res://levels/%d/level.tscn" % lvl_number).instantiate()
 	current_scene = scene
+	is_main_menu = false
 	current_level_number = lvl_number
 	get_tree().root.add_child(scene)
 	
@@ -86,6 +95,7 @@ func load_end_scene():
 	unload_scene()
 	var scene = load("res://title_screen/end_screen.tscn").instantiate()
 	current_scene = scene
+	is_main_menu = false
 	get_tree().root.add_child(scene)
 	# disconnect the signal
 	if game_started:
@@ -96,4 +106,9 @@ func load_title_scene():
 	unload_scene()
 	var scene = load("res://title_screen/title_screen.tscn").instantiate()
 	current_scene = scene
+	is_main_menu = true
 	get_tree().root.add_child(scene)
+	# disconnect the signal
+	if game_started:
+		game_started = false;
+		_load_song("res://game_manager/Moleom-main-title.ogg")
